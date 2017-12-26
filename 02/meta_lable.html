@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/day-01.css" />
+		<!--meta 标签-->
+		<!--／／ meta 主要为搜索引擎 更新频度的描述和关键字，还有游览器所用／／
+		／／charset 字符集 ／／
+		／／ utf-8 所有国家和地图的文字都存在这个编码字符集中／／
+		// utf-16
+		// GBK 中文／／
+		／／ GB2312 中文／／ 
+		// ISO-8859-1 (北欧)／／-->
+		
+			<!--如何防止乱码-->
+		<!--三个一
+		页面的编码格式为utf-8
+		页面的储存格式为utf-8
+		游览器默认显示的格式为utf-8-->
+		
+		<!--搜索引擎 百度 谷歌 必应 搜狗-->
+		<!--搜索引擎的原理-->
+		<!--<meta name="keywords" content="电商 女装 男装 童装。。。。" />
+		<meta name="description" content=""-->
+		 <!--搜索引擎概述-->
+		 <!--SEO： “搜索引擎优化” 通过理解和猜想百度的排序算法，合理的调整代码及词条，令自己的网站排名靠前一点 
+		 SEM： “搜索引擎营销” 通过百度支付相应的费用，将流量导入到网站中 -->
+		 
+		
+		 <!--高权重标签
+		 <strong></strong>
+		 <em></em>
+		 <h1></h1>(h1到h10)		 		
+		<meta charset="UTF-8"> -->
+		
+		<!--head 主要标签
+		<tittle></tittle> 页面标签
+		<link rel="stylesheet" type="text/css" href=""/> 引用css文件，页面的头部的一个icon
+		<meta /> 游览器和搜索引擎相关设置
+		<script></script> -->
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="icon" href="img/icon2.jpg" />
+	</head>
+	<body>
+		<!--html 常用的8个标签
+			div 
+			span
+			ul li
+			p
+			img
+			a
+			table tr(行) td（列） 在table中 需要将cellpadding 和 cellspacing设置为0.下 
+			input  控件功能由type属性决定的
+			checkbox 多选框
+			radio 单选框
+			select > option 选择
+			textarear 多行文本域 属于 rows 可定义列 col 可定义行
+			input 属于 placeholder(文本域提示)
+			id 控件独有的名字，配合lable的for属性使用
+			input中的默认选中的属性直接为checked
+		-->			
+	<!--table>tr*4>td*4-->
+	<!--横向合并 colspan-->
+	<!--纵向合并 rowspan
+	fieldset > lengd
+	select 中的属于 multiple 为多选  属性size 为个数  selected 为默认选择
+	上传照片：input type＝file
+	form 代表：1 所有控件内容都应该被form包裹
+			  2 他标志着提交后台的路径-->
+	
+	
+	
+	<!--<table class="body">
+		<!--<tr class="content"
+			<td>学生名</td>			
+			<td>英语</td>
+			<td>数学</td>
+			<td>数学</td>
+			<td>数学</td>			
+		</tr>
+		<tr class="content">
+			<td>小花</td>			
+			<td>88</td>
+			<td>60</td>
+			<td>50</td>
+			<td>90</td>
+		</tr>
+		<tr class="content">
+			<td>小明</td>			
+			<td>58</td>
+			<td>80</td>
+			<td>50</td>
+			<td>40</td>
+		</tr>
+		<tr class="content">
+			<td>小葱</td>			
+			<td>30</td>
+			<td>70</td>
+			<td>90</td>
+			<td>80</td>
+		</tr>		
+	</table>-->
+	<form class="r_table">
+		<!--type 决定
+			name 属性规定该单选框属于哪个按钮
+		-->
+		注册表 <br /><br/>
+		<div class="table_content">
+			<lable>用户名</lable>
+			<input type="text" /><br />
+		    <lable>密&ensp;&ensp;码</lable>	 
+			<input type="password" /><br />
+			性&ensp;&ensp;别：
+			<label for="male">
+			男 <input type="radio" name="sex" id="male" value="" />
+			</label>
+			<label>
+			女 <input type="radio" name="sex" id="female" value="" /><br />
+			</label>
+			兴趣爱好：
+			打球 <input type="checkbox" />
+			唱歌 <input type="checkbox" />
+			跳舞 <input type="checkbox" />
+			看电影 <input type="checkbox" />
+		</div>
+	</form>
+	</body>
+</html>
