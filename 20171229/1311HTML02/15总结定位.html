@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		定位：
+			1：绝对定位。会脱离文档流(会盖住别的元素)，不会影响别的元素的位置。
+			定位偏移left,right,top,bottom,相对于最近的有定位属性的祖先元素.如果没有相对于body
+			
+			2:相对定位。不会脱离文档流。如果设置margin偏移，会影响别的非定位元素的位置。
+			定位偏移left,right,top,bottom,相对于自身原先的位置。
+			
+			3:固定定位。会脱离文档流(会盖住别的元素)，不会影响别的元素的位置。
+			定位偏移left,right,top,bottom,相对于可视区域。
+			
+		定位层级z-index：
+			覆盖顺序：先比较相对定位的层级，然后比较绝对定位的层级，层级越高，显示优先级越高。
+		
+	</body>
+</html>

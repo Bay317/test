@@ -1,0 +1,105 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.top1{
+	width: 880px;
+	height: 120px;
+	margin: 0 auto;
+}
+.top01{
+	width: 800px;
+	height: 8px;
+	background: green;
+	/*margin: 0 auto;*/
+}
+.top02{
+	width: 800px;
+	height: 55px;
+	background: white;
+	/*margin: 0 auto;*/
+	color: #008000;
+	font-size: 30px;
+	text-align: center;
+	line-height: 55px;
+}
+div>.div01{
+	width: 880px;
+	/*margin: 0 auto;*/
+}
+.top>li{
+	width: 80px;
+	height: 34px;
+	list-style: none;
+	background: green;
+	color: white;
+	text-align: center;
+	line-height: 35px;
+	margin: 1px;
+}
+.top03,.top04,.top05,.top06,.top07,.top08{
+	float: left;
+}
+.top09,.top00{
+	float: left;
+}
+.top>.top08{
+	width: 210px;
+}
+.top>.top06{
+	width: 100px;
+}
+.div02{
+	width: 800px;
+	margin: 0 auto;
+}
+.div02>.centre,.div03,.div04{
+	float: left;
+}
+.centre{
+	margin: 0 auto;
+}
+.centre>ul>li{
+	width: 190px;
+	height: 35px;
+	list-style: none;
+	background: green;
+	margin: 1px;
+}
+.div03>ul>li{
+	width: 190px;
+	height: 180px;
+	background: green;
+	list-style: none;
+	margin: 1px;
+	/*align-content: center;*/
+}
+.div04>ul>li{
+	list-style: none;
+	margin: 1px;
+	/*align-content: center;*/
+}
+.li01{
+	width: 292px;
+	height: 179px;
+	background: green;
+}
+.li02{
+	width: 145px;
+	height: 179px;
+	background: green;
+	float: right;
+}
+.li03{
+	width: 145px;
+	height: 179px;
+	background: green;
+	float: right;
+}
+#del{
+	width: 800px;
+	height: 70px;
+	background: green;
+	overflow: hidden;
+	margin: 0 auto;
+}

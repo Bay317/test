@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*#box{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}*/
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			/*:hover伪类选择器，鼠标移入时样式生效*/
+			
+			/*被鼠标移入的div*/
+			div:hover{
+				background: green;
+			}
+			/*被鼠标移入的div里面的p元素*/
+			div:hover>p{
+				display: block;
+			}
+			p{
+				display: none;
+			}
+			/*被鼠标移入的元素并且是div*/
+			div:hover{
+				background: green;
+			}
+			/*div.hover{
+				background: green;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id='box'>
+			<p>暗示的房间阿斯蒂芬看</p>
+		</div>
+		<!--<div class='hover'></div>-->
+	</body>
+</html>

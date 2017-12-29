@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div>div{
+				width: 200px;
+				height: 200px;
+				margin-top:1px;
+			}
+			.blue{
+				background:blue;
+				position: absolute;
+				z-index: 100000000000000000000000000000000;
+			}
+			.yellow{
+				background: orange;
+				position: absolute;
+			}
+			body>div{
+				position: relative;
+			}
+			.top{
+				z-index: 1;
+			}
+			.bottom{
+				z-index: 2;
+			}
+		</style>
+	</head>
+	<body>
+		
+		z-index:定位元素的层级,控制显示定位元素的显示优先级,层级越高,优先级越高；
+		层级优先级->先比较相对定位的层级，然后再比较绝对定位的层级；
+		设置定位元素的覆盖顺序,层级高的覆盖层级低的；
+		
+		<div class='top'>
+			<div class='blue'></div>
+		</div>
+		<div class='bottom'>
+			<div class='yellow'></div>
+		</div>		
+	</body>
+</html>

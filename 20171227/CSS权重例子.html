@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 12px;
+    }
+
+    div {
+      background: #fff;
+      font-size: inherit;
+    }
+
+    .red-bg {
+      background: red;
+    }
+
+    div:hover {
+      background: #ff0;
+    }
+
+    .yellow-text {
+      color: #0ff;
+    }
+    
+    #big-font {
+      font-size: 30px;
+    }
+    
+    .input-box {
+      background: blue;
+    }
+
+    [type="password"] {
+      background: green;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="red-bg yellow-text" id="big-font">文字</div>
+  <div class="red-bg">文字</div>
+  <p class="red-bg yellow-text">文字</p>
+  <p class="red-bg">文字</p>
+  <span class="red-bg yellow-text">文字</span>
+  <span class="red-bg">文字</span>
+  <input class="input-box" type="text" />
+  <input class="input-box" type="password" />
+<!-- 
+样式的权重表示方式：A-B-C-D（初始值0-0-0-0）
+
+比较方式：从A到D依次比较，如相同则比较下一位，如不同则按当前位判断大小
+举例：1-1-2-0和1-2-1-0
+  先比较A位，1 = 1，继续比较下一位，1 < 2，后者大，无需再比较C、D
+
+行内样式 A = 1
+ID选择器 B = 1
+类选择器、伪类、属性选择器 C += 1
+伪元素、标签 D += 1
+
+单独的*、继承属性权重为0-0-0-0
+
+当权重值完全相等时，后定义（加载）的优先
+
+注意！以上情况均不包含使用了!important关键字的情况
+ -->
+
+
+  
+
+</body>
+</html>

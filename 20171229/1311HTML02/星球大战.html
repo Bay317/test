@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width: 400px;
+				height:400px;
+				border-radius: 50%;
+				border:10px solid #fff;
+				box-shadow: 
+				0 0 10px #666,
+				inset 0 0 0 20px rgba(0,0,0,0.05),
+				inset 0 0 0 40px rgba(0,0,0,0.05),
+				inset 0 0 0 60px rgba(0,0,0,0.05),
+				inset 0 0 0 80px rgba(0,0,0,0.05),	
+				inset 0 0 0 100px rgba(0,0,0,0.05);		
+				margin: 200px auto;
+				background: -webkit-radial-gradient(right top,#35cdff,#3195b6);
+				position: relative;
+			}
+			#wrap>div{
+				position: absolute;
+			}
+			#big{
+				width: 160px;
+				height: 160px;
+				border-radius: 50%;
+				top:120px;
+				left:120px;
+				z-index: 2;
+				background: -webkit-linear-gradient(300deg,#ffe63a,#d76e20,#291709);
+			}
+			#small{
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				top:70px;
+				left:270px;
+				z-index: 4;
+				background: -webkit-linear-gradient(#62d2dc,#0c2e31);
+			}
+			.round{
+				width:227px;
+				height: 112px;
+				border:5px solid #e07722;
+				-webkit-transform: skew(-54deg);
+				border-radius: 50%;
+				top:142px;
+				left:81px;			
+			}
+			.round.before{
+				-webkit-clip-path: inset(0 0 50% 0);
+				z-index: 1;
+			}
+			.round.after{
+				-webkit-clip-path: inset(50% 0 0 0);
+				z-index: 2;				
+			}
+			.round.small{
+				border:5px solid #b0c658;
+				-webkit-transform: scale(0.8,0.8) skew(-54deg);
+			}
+			.start{
+				width:2px;
+				height:2px;
+				border-radius: 50%;
+				background: #fff;
+				top:200px;
+				box-shadow: 0 0 6px yellow;
+				z-index: 0;
+			}
+			@-webkit-keyframes move{
+				from{-webkit-transform: rotate(0deg);}
+				to{-webkit-transform: rotate(360deg);}
+			}
+			.start:nth-last-child(1){
+				-webkit-transform-origin:-190px 0;
+				-webkit-animation: move 14s linear infinite;
+				right:10px;
+			}
+			.start:nth-last-child(2){
+				-webkit-transform-origin:-170px 0;
+				-webkit-animation: move 13s linear infinite;
+				right:30px;
+			}
+			.start:nth-last-child(3){
+				-webkit-transform-origin:-150px 0;
+				-webkit-animation: move 12s linear infinite;
+				right:50px;
+			}
+			.start:nth-last-child(4){
+				-webkit-transform-origin:-130px 0;
+				-webkit-animation: move 11s linear infinite;
+				right:70px;
+			}
+			.start:nth-last-child(5){
+				-webkit-transform-origin:-110px 0;
+				-webkit-animation: move 10s linear infinite;
+				right:90px;
+			}
+			.shoot:before{
+				content: '';
+				display: block;
+				width: 150px;
+				height: 1px;
+				position: absolute;
+				left:-150px;
+				background: -webkit-linear-gradient(right,rgba(255,255,255,0.7),rgba(255,255,255,0));
+			}
+			.shoot:nth-child(1){
+				top:100px;
+				left: -50px;
+				-webkit-animation: shoot 7s linear infinite;
+			}
+			.shoot:nth-child(2){
+				-webkit-animation: shoot 5s linear infinite;
+				top:200px;
+				left: -50px;
+			}
+			.shoot:nth-child(3){
+				-webkit-animation: shoot 9s linear infinite;
+				top:350px;
+				left: -50px;
+			}
+			@-webkit-keyframes shoot{
+				from{-webkit-transform: translateX(-50px);}
+				to{-webkit-transform: translateX(600px);}
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div class='start shoot'></div>
+			<div class='start shoot'></div>
+			<div class='start shoot'></div>
+			<div class='round before small'></div>
+			<div class='round before '></div>
+			<div id='big'></div>
+			<div class='round after small'></div>
+			<div class='round after '></div>
+			<div id='small'></div>
+			<div class='start'></div>
+			<div class='start'></div>
+			<div class='start'></div>
+			<div class='start'></div>
+			<div class='start'></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				margin-top:1px;
+			}
+			.blue{
+				background:blue;
+				position: absolute;
+				top:100px;
+				left:100px;
+				right:100px;
+				bottom:100px;
+			}
+			.yellow{
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		定位元素的偏移设置:top,left,right,bottom.
+					      如果不是定位元素,这些偏移设置无效.
+					      如果同时设置了left与right,则left生效
+					      如果同时设置了top与bottom,则top生效
+					      
+			这个例子里top,left相对于的是body的偏移.
+			
+		<div class='blue'></div>
+		<div class='yellow'></div>
+	</body>
+</html>
