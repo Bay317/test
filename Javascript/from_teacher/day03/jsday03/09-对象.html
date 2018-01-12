@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			person2 = {
+				name : "小红",
+				age : 24,
+				aichimangguo : true,
+			}
+			person = {
+				name : "小张",
+				age : 25,
+				aichimangguo : false,
+				wife : person2
+			}
+			function show_person(person){
+				console.log("他的名字是" + person.name + "他的年龄是" + person.age);
+				if(person.wife){
+					console.log("他老婆名字是" + person.wife.name)
+				}
+			}
+			show_person(person)
+		</script>
+	</body>
+</html>

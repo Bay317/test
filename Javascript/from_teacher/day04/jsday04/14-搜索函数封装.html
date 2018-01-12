@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul, li {
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="cityText"/>
+		<input type="button" value="搜索" id="searchBtn"/>
+		<ul id="citys">
+			<li>北京</li> 
+			<li>上海</li>
+			<li>广州</li>
+			<li>深圳</li>
+		</ul>
+		<script type="text/javascript">
+			let oCityText = document.getElementById("cityText");
+			let oSearchBtn = document.getElementById("searchBtn");
+			let oCitys = document.getElementById("citys");
+			let aCityList = oCitys.getElementsByTagName("li");
+			
+			oSearchBtn.onclick = function() {
+				//在文本框中的城市名称,待搜索的城市
+				let targetStr = oCityText.value
+				for(let i = 0; i < aCityList.length; i++){
+					//每次遍历的时候都应该清除上次留下的痕迹
+					aCityList[i].style.background = ""
+				}
+				for(let i = 0; i < aCityList.length; i++) {
+					debugger
+					//ul中的城市数据.用for循环挨个遍历,依次得到北京/上海/广州/深圳
+					let cityStr = aCityList[i].innerHTML
+					if(targetStr === cityStr) {
+						aCityList[i].style.background = "pink"
+						return
+					}
+				}
+				//北京不匹配,上海不匹配,广州不匹配,深圳不匹配,代码才会跑到这儿来
+				console.log("没有找到相关城市")
+			}
+		</script>
+	</body>
+</html>

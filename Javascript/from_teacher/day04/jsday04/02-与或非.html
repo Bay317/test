@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//与或非
+			//首先我们问一个问题 如何在代码中实现 8<a<20
+			//与(且)
+			let a = 10;
+			//只要其中的条件有一个是假的就是假
+			//全真为真
+			if(a > 8 && a < 20){
+				console.log("真")
+			}
+			
+			if(!(a <= 8 || a >= 20)){
+				console.log("8-20")
+			}
+			
+			//或
+			let b = 1
+			//绝对值大于5 => 一个数字大于5 或者小于-5
+			//只要其中的条件有一个是真的就是真
+			//全假为假
+			if(b > 5 || b < -5){
+				console.log("真")
+			}
+			
+			//非
+			//运算符的优先级
+			let c = false
+			if(!(c)){
+				console.log("真")
+			}
+		</script>
+	</body>
+</html>

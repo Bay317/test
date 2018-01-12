@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    body {
+      background: #f0f0f0;
+      height: 100%;
+    }
+    .div1 {
+      background-color: red;
+      /* 通用的情况（无论宽高是否确定） */
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      
+      /* 往回移动自身宽度和高度的一半 */
+      transform: translate(-50%, -50%);
+
+      /* 这里只是为了举例给了一个宽度和高度，这里的宽度和高度可以随意变化而不更改其他代码 */
+      width: 500px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1">
+    
+  </div>
+</body>
+</html>

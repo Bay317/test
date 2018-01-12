@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	1.所有的控件内容都应该被form包裹
+        	2.他标志着提交后台的路径
+        -->
+		<form action="register.action">
+			<fieldset id="">
+				<legend>账户信息</legend>
+				<label for="username">用户名 :</label>
+				<input type="text" name="username" placeholder="请输入6-16个字符" id="username"/>
+				<br />
+				<br />
+				<!-- 密码框|密文框 -->
+				<label for="pwd">密码 : </label>
+				<input type="password" name="pwd" placeholder="请输入6-16个字符" id="pwd"/>
+				<br />
+				<br />
+			</fieldset>
+			<fieldset id="">
+				<!-- 
+					multiple 支持下拉菜单多选
+				-->
+				籍贯 :
+				<select name="provice" multiple size="5">
+					<option value="">--请选择--</option>
+					<option value="gd" selected>广东</option>
+					<option value="gx">广西</option>
+					<option value="fj" selected>胡建</option>
+					<option value="hn">福南</option>
+				</select>
+				<br />
+				<br />
+				上传照片 : <input type="file" />
+				<br />
+				<br />
+				<!-- 图片控件 本质上就是一个图片样式的提交按钮 -->
+				<input type="image" src="img/reg.jpg"/>
+				<input type="submit" />
+			</fieldset>
+		</form>
+	</body>
+</html>

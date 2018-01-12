@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			.container{
+				width: 1200px;
+				margin:0 auto;
+				overflow: hidden;
+			}
+			#header>.container>input{
+				float: right;
+			}
+			#header ul>li{
+				list-style: none;
+				float: left;
+				padding: 10px 30px;
+				color: #fff;
+			}
+			.nav{
+				background: #96b97d;
+			}
+			.logo{
+				height: 100px;
+			}
+			.logo>img{
+				margin-top:30px;
+			}
+			.logo>input{
+				width: 400px;
+				line-height: 37px;
+				margin-top:30px;
+				/*圆角设置,设置圆角的半径*/
+				border-radius: 5px;
+				border:1px solid #c8c8c8;
+				padding-left: 10px;
+			}
+			body{
+				/*谷歌默认字号是16px,14px更经典*/
+				font-size: 14px;
+				background: #f5f5f5;
+			}
+			.aside>ul>li{
+				border-top:1px solid #ddd;
+				line-height: 40px;
+				padding-left:8px;
+				background: #fafafa;
+			}
+			.aside>ul>.white{
+				background: #fff;
+			}
+			.aside>ul{
+				width: 200px;
+				border:1px solid #ddd;
+			}
+			#content{
+				margin-top: 25px;
+			}
+			.article,.aside{
+				float: left;
+			}
+			.article{
+				width: 971px;
+				border:1px solid #ddd;
+				border-radius: 5px;
+				margin-left:25px;
+				background: #fff;
+			}
+			.aside img{
+				position: relative;
+				top:2px;
+			}
+			.aside a{
+				color: #333;
+				text-decoration: none;
+				padding-left: 5px;
+			}
+			.aside .title{
+				line-height: 30px;
+				background: #dcdcdc;
+			}
+			.caption{
+				padding: 25px;
+				padding-top:10px;
+			}
+			.caption>.title h3{
+				padding-bottom: 8px;
+				padding-top: 20px;
+				border-bottom: 1px solid #ddd;
+			}
+			.cont_item h3{
+				border:none;
+				line-height: 35px;
+				color: green;
+			}
+			.cont_item{
+				width: 410px;
+				float: left;
+				background: #f5f5f5;
+				border-radius: 5px;
+				margin-top:20px;
+				padding:20px;
+				margin-right:20px;
+			}
+			.cont_list{
+				overflow: hidden;
+			}
+			.cont_item img{
+				float: left;
+			}
+			.cont_item span{
+				padding-left: 40px;
+				display: block;
+			}
+			.cont_item.right{
+				margin-right:0;
+			}
+			#footer .bottom{
+				text-align: center;
+				color: #666;
+				line-height: 60px;
+			}
+			#footer .top{
+				background: #fff;
+				padding: 20px;
+				/*不要设置13号字体*/
+				font-size: 12px;
+				color:#999;
+				line-height: 25px;
+				margin-top:20px;
+				border-top:1px solid #ddd;
+				border-bottom:1px solid #ddd;
+			}
+			#footer .f_l{
+				width:20%;
+				border-left:1px solid #ddd;
+				padding-left: 20px;
+				float: left;				
+			}
+			.rwm{
+				position: fixed;
+				right: 10px;
+				bottom:100px;
+				padding: 15px;
+				background: #fff;
+				border:1px solid #666;
+				cursor: pointer;
+			}
+			.rwm img{
+				display: none;
+				position: absolute;
+				top:-38px;
+				left:-130px;
+			}
+			.rwm:hover>img{
+				display: block;				
+			}
+		</style>
+	</head>
+	<body>
+		<div class='rwm'>
+			扫二<br />维码
+			<img src="img/ewm.png" alt="" />
+		</div>
+		<div id='header'>
+			<div class='container logo'>
+				<img src="img/runoob-logo.png" alt="" />
+				<input type="text" value="搜索..." />
+			</div>
+			<div class='nav'>
+				<ul class='container'>
+					<li>首页</li>
+					<li>菜鸟工具</li>
+					<li>菜鸟笔记</li>
+					<li>参考手册</li>
+					<li>测试</li>
+					<li>注册</li>
+				</ul>
+			</div>
+		</div>
+		<div id='content'>
+			<div class='container'>
+				<div class='aside'>
+					<ul>
+						<li class='title'>
+							<img src="img/arrow.png" alt="" />全部教程
+						</li>
+						<li>
+							<img src="img/arrow.png" alt="" />
+							<a href="#">html+css</a>
+						</li>
+						<li class='white'>
+							<img src="img/arrow.png" alt="" />
+							<a href="#">html+css</a>
+						</li>
+						<li>
+							<img src="img/arrow.png" alt="" />
+							<a href="#">html+css</a>
+						</li>
+						<li class='white'>
+							<img src="img/arrow.png" alt="" />
+							<a href="#">html+css</a>
+						</li>
+						<li>
+							<img src="img/arrow.png" alt="" />
+							<a href="#">html+css</a>
+						</li>
+						<li class='white'>
+							<img src="img/arrow.png" alt="" />
+							<a href="#">html+css</a>
+						</li>
+						<li>
+							<img src="img/arrow.png" alt="" />
+							<a href="#">html+css</a>
+						</li>
+						<li class='white'>
+							<img src="img/arrow.png" alt="" />
+							<a href="#">html+css</a>
+						</li>						
+					</ul>
+				</div>
+				<div class='article'>
+					<div class='caption'>
+						<div class='title'>
+							<h3>HTML/CSS</h3>
+						</div>
+						<div class='cont_list'>
+							<div class='cont_item'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+							<div class='cont_item right'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+							<div class='cont_item'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+							<div class='cont_item right'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+							<div class='cont_item'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+							<div class='cont_item right'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+						</div>
+						<div class='title'>
+							<h3>HTML/CSS</h3>
+						</div>
+						<div class='cont_list'>
+							<div class='cont_item'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+							<div class='cont_item right'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+							<div class='cont_item'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+							<div class='cont_item right'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+							<div class='cont_item'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+							<div class='cont_item right'>
+								<h3>【学习 HTML】</h3>
+								<img src="img/img.png" alt="" />
+								<span>HTML，即超文本标记语言（Hyper Text Markup Language）</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div id='footer'>
+			<div class='top'>
+				<div class='container'>
+					<div class='f_l'>
+						<h3>hhaaaaaaaa</h3>
+						<ul>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+						</ul>
+					</div>
+					<div class='f_l'>
+						<h3>hhaaaaaaaa</h3>
+						<ul>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+						</ul>
+					</div>
+					<div class='f_l'>
+						<h3>hhaaaaaaaa</h3>
+						<ul>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+						</ul>
+					</div>
+					<div class='f_l'>
+						<h3>hhaaaaaaaa</h3>
+						<ul>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+							<li>▪ HTML 实例</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class='bottom'>
+				<p>Copyright © 2013-2018 菜鸟教程  runoob.com All Rights Reserved. 备案号：闽ICP备15012807号-1</p>
+			</div>
+		</div>
+	</body>
+</html>

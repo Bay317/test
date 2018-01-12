@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div>span,div>div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin-left:1px;
+				float: left;
+				margin-top:50px;
+			}
+			body>div{
+				margin-top:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--浮动元素不区分行内元素，块级元素以及行内块级元素。
+		可以统一设置宽高，设置垂直方向的margin，并且不会重叠
+		-->
+		<div>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<div>5</div>
+		</div>
+	</body>
+</html>

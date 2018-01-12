@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">123</div>
+		<script type="text/javascript">
+			//匈牙利命名法+驼峰式命名法  第一个单词表示类型 object
+			let oDiv = document.getElementById("div1")
+//			oDiv.style.backgroundColor = "pink"
+//			oDiv.style.width = "100px"
+//			oDiv.style.height = "100px"
+			oDiv.className = "box"
+		</script>
+	</body>
+</html>

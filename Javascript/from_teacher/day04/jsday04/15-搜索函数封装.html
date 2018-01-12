@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul, li {
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="cityText"/>
+		<input type="button" value="搜索" id="searchBtn"/>
+		<ul id="citys">
+			<li>北京</li> 
+			<li>上海</li>
+			<li>广州</li>
+			<li>深圳</li>
+		</ul>
+		<script type="text/javascript">
+			let oCityText = document.getElementById("cityText");
+			let oSearchBtn = document.getElementById("searchBtn");
+			let oCitys = document.getElementById("citys");
+			let aCityList = oCitys.getElementsByTagName("li");
+			
+			oSearchBtn.onclick = function() {
+				clear();
+				let targetLi = toCom(targetStr);
+				change(li)
+			}
+			
+			function clear() {
+				for(let i = 0; i < aCityList.length; i++){
+					//每次遍历的时候都应该清除上次留下的痕迹
+					aCityList[i].style.background = ""
+				}
+			}
+			
+			//str 是我输入的内容
+			function toCom(str) {
+				for(let i = 0; i < aCityList.length; i++){
+					let cityStr = aCityList[i].innerHTML
+					if(str === cityStr) {
+						return aCityList[i]
+					}
+				}
+				return false
+			}
+			
+			//粒度
+			function change(li) {
+				if(li) {
+					li.style.background = "pink"
+				} else {
+					console.log("抱歉,未找到相关的城市")
+				}
+			}
+		</script>
+	</body>
+</html>

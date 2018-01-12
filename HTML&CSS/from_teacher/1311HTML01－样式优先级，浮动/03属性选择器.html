@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*.box{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}*/
+			/*[class='box']{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}*/
+			div[id='box']{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			[id='box']{
+				width: 200px;
+				height: 200px;
+				background: blue;
+			}			
+			[value="按钮"]{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			[class='box box1']{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			[style="width:300px;height:400px;background: blue;"]{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			[style="asjkdfhsdh"]{
+				width: 200px;
+				height: 200px;
+				background: green;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--属性选择器属性的值统一推荐用引号括起-->
+		<div id='box' class='box'>box</div>
+		<div id='box1' class='box box1'>box1</div>
+		<div id='box1' class='box box1' style="width:300px;height:400px;background: blue;">box2</div>
+		<div id='box1' class='box box1' style="asjkdfhsdh">box3</div>
+		<div class='box1'></div>
+		<input type="button" name="abc" id="abc" value="按钮" />
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var x = 1;
+			var y = 2;
+			var z = 3;
+			function add(){
+				console.log(arguments)
+				console.log(arguments.length)
+				let result = 0;
+				for(let i = 0; i < arguments.length; i++){
+					result += arguments[i]
+				}
+				return result
+			}
+			//解决不定参方案 argument
+			
+			console.log(add(x))
+		</script>
+	</body>
+</html>

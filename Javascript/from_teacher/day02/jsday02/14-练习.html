@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			//1.选择元素
+			let aLi = document.getElementsByTagName("li")
+			debugger
+			for(var i = 0; i < aLi.length; i++){
+				if(i % 3 === 0) {
+					aLi[i].style.background = "pink"
+					aLi[i].color = "pink"
+				} else if(i % 3 === 1) {
+					aLi[i].style.background = "yellow"
+					aLi[i].color = "yellow"
+				} else if(i % 3 === 2) {
+					aLi[i].style.background = "blue"
+					aLi[i].color = "blue"
+				}
+				debugger
+				//外面的代码是页面初始化就执行了,此时i从0-9,当到达9的时候条件不满足,跳出循环,初始化完成
+				//此时i永永远远变成9,它已经是一个废数据了
+				aLi[i].onmouseover = function() {
+					this.style.backgroundColor = "green"
+				}
+				
+				aLi[i].onmouseout = function(){
+					this.style.backgroundColor = this.color
+				}
+			}
+		</script>
+	</body>
+</html>

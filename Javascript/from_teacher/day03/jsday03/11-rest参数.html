@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//rest参数 就是将多余的参数聚合到一个变量中
+			function sum(...nums){
+				let result = 0
+				for(let i = 0; i < nums.length; i++){
+					result += nums[i]
+				}
+				return result
+			}
+			
+			console.log(sum(1, 2, 3, 4, 5));
+			
+			function add(){
+				let result = 0;
+				for(let i = 0; i < arguments.length; i++){
+					result += arguments[i]
+				}
+				return result
+			}
+			//解决不定参方案 argument
+			
+			console.log(add(1, 2, 3))
+		</script>
+	</body>
+</html>

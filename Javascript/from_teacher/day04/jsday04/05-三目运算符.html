@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let a = 123;
+			if(a === 123){
+				console.log("a为123")
+			} else {
+				console.log("a不为123")
+			}
+			
+//			如果(判断条件){
+//				为真,显示这里的代码
+//			} 否则 {
+//				为假,显示这里的代码
+//			}
+
+			let b = 321
+			// a ? b : c 其中a为判断条件,如果是真的就执行b,如果是假的就执行c
+			// 三目运算 减少了代码的书写,一定程度的降低了代码的可读性
+			let c = (b === 123) ? "b是123" : "b不是123"
+			console.log(c);
+			
+			let d = 0 ? 2 : 3 ? 4 : 5 ? 6 : 7;
+			console.log(d)  //2
+			console.log(d)  //4
+		</script>
+	</body>
+</html>

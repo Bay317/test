@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" style="width: 200px;height: 200px;background: green;"></div>
+		<script type="text/javascript">
+			let oDiv = document.getElementById("div1");
+			//所有的事件都是on开头的 事件的本质是函数
+			//function 是函数的意思
+			//给某个div绑定一个事件(鼠标进入事件) 大括号中的代码标志的是鼠标进入之后会发生的事
+			oDiv.onmouseover = function() {
+				oDiv.style.backgroundColor = "yellow"
+			}
+			oDiv.onmouseout = function() {
+				oDiv.style.backgroundColor = "red"
+			}
+			oDiv.onclick = function() {
+				console.log("您正在点击")
+			}
+		</script>
+	</body>
+</html>

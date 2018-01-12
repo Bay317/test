@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul>li{
+				float: left;
+				width: 100px;
+				height: 50px;
+				background: red;
+				list-style: none;
+				text-align: center;
+				line-height:50px;
+				border-left:1px solid #fff;
+			}
+			ul{
+				width: 756px;
+				height: 50px;
+				background: red;
+				margin:0 auto;
+			}
+			.top{
+				float: left;
+				width: 373px;
+				height: 168px;
+				background: red;
+				margin-left:2px;
+				margin-top: 2px;
+			}
+			.container{
+				width: 756px;
+				margin: 0 auto;
+				/*padding-top: 20px;*/
+				margin-top: 20px;
+			}
+			#bottom{
+				width:756px;
+				margin: 30px auto;
+				height: 70px;
+				text-align: center;
+				font-size: 30px;
+				color: #fff;
+				background: red;
+				line-height:70px;
+			}
+			.container>div{
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--以目的为导向.-->
+		<!--如果块级元素需要在一行靠左或者靠右显示。推荐给该元素加float属性。
+		当一个元素的所有子元素都有浮动元素时，该元素高度就会塌陷(高度为0)。
+			塌陷解决：
+				给高度塌陷的元素添加样式
+				1:给高度设置定值。
+				2:设置overflow:hidden;
+				3:设置为浮动;
+				4:给该元素底部添加一个空的块级元素，并且加clear:both样式。-->
+		
+		<!--浮动要从左往右排列：必须保证父元素的宽足够子元素在一行显示。如果宽度不够，子元素会换行。-->
+		
+		<div>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+		<div class='container'>
+			<div>
+				<div class='top'></div>
+				<div class='top'></div>
+			</div>
+			<div>
+				<div class='top'></div>
+				<div class='top'></div>
+			</div>
+		</div>
+		<div id='bottom'>aklasdfjasdf</div>
+	</body>
+</html>

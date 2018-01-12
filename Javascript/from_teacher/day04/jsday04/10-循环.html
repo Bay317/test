@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			for(let i = 1; i <= 5; i++){
+//				debugger
+//				if(i === 2){
+//					//跳出当前循环
+//					//continue
+//					//跳出整个循环
+//					//break
+//				}
+//				console.log("星期" + i + "在上班")
+//			}
+			//continue
+			//break
+			//return
+			function show(){
+				for(let i = 1; i <= 5; i++){
+					if(i === 2){
+						//跳出函数
+						//return只能在函数中使用
+						return
+					}
+					console.log("星期" + i + "在上班")
+				}
+			}
+			show();
+		</script>
+	</body>
+</html>

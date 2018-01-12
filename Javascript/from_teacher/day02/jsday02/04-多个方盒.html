@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			ul,li {
+				list-style: none;
+			}
+			ul > li {
+				width: 49px;
+				height: 49px;
+				background: pink;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="wrap">
+		</ul>
+		<script type="text/javascript">
+			let oUl = document.getElementById("wrap");
+			
+//			for(let i = 0; i < 50; i++){
+//				oUl.innerHTML += "<li></li>"
+//			}
+			
+			//行
+			let rows = 5;
+			//列
+			let cols = 10;
+			//单位值
+			let em = 50;
+			for(let i = 0; i < rows; i++){
+				for(let j = 0; j < cols; j++){
+					//单遇双,双遇单
+					oUl.innerHTML += '<li style="left: ' + em*j + 'px;top: ' + em*i + 'px;background-image: url(img/1.png);background-position:-' + em * j + 'px -' + em * i + 'px"></li>'
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 100%;
+				height: 1000px;
+				/* 背景颜色 */
+				background-color: gray;
+				/* 背景图片 */
+				background-image: url(img/bg.jpg);
+				/* 背景图片重复 */
+				/**
+				 * background-repeat : repeat(缺省值) 在横坐标和纵坐标皆重复
+				 * 					   no-repeat 既不在x轴重复又不在y轴重复
+				 * 					   repeat-x 在x轴重复
+				 * 					   repeat-y 在y轴重复
+				 */
+				background-repeat: no-repeat;
+				/* 背景图片定位 */
+				/**
+				 * background-position : 0% 0%(缺省值) 
+				 * 						 0-100% 0-100%
+				 * 						 center/top/bottom/left/right
+				 */
+				background-position: right bottom;
+				/* 设置之后该背景图跟随视口移动 */
+				background-attachment: fixed;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

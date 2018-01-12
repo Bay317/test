@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="">
+			<!--
+            	表单控件的功能是由input的type属性决定
+            	(表单元素一般需要的属性)
+            	type:控件的功能
+            	name:控件的名字(单选/复选按钮属于哪个按钮组)
+            	id:控件独有的名字,配合label的for属性使用
+            -->
+			<!-- 文本框|明文框 
+				文本预提示 placeholder
+			-->
+			<label for="username">用户名 :</label>
+			<input type="text" name="username" placeholder="请输入6-16个字符" id="username"/>
+			<br />
+			<br />
+			<!-- 密码框|密文框 -->
+			<label for="pwd">密码 : </label>
+			<input type="password" name="pwd" placeholder="请输入6-16个字符" id="pwd"/>
+			<br />
+			<br />
+			<!-- 单选框
+				需要通过name属性来规定该单选框属于哪个按钮组
+				checked 代表默认选中
+			-->
+			性别 : 
+			<label for="male">男</label>
+			<input type="radio" name="sex" id="male"/>
+			<label for="female">女</label>
+			<input type="radio" name="sex" id="female" checked/>
+			<br />
+			<br />
+			<!-- 多选框 -->
+			爱好 : 
+			唱歌<input type="checkbox" name="like"/>
+			跳舞<input type="checkbox" name="like"/>
+			游泳<input type="checkbox" name="like"/>
+			<br />
+			<br />
+			<!-- 下拉框 -->
+			籍贯 :
+			<select name="provice">
+				<option value="">--请选择--</option>
+				<option value="gd">广东</option>
+				<option value="gx">广西</option>
+				<option value="fj">胡建</option>
+				<option value="hn">福南</option>
+			</select>
+			<br />
+			<br />
+			自我介绍 :
+			<!-- 多行文本域 -->
+			<textarea name="description" rows="10" cols="20"></textarea>
+			<br />
+			<br />
+			<!-- 提交按钮 -->
+			<input type="submit" />
+			<br />
+			<br />
+			<!-- 重置按钮 -->
+			<input type="reset" />
+			<br />
+			<br />
+			<!-- 普通按钮 -->
+			<input type="button" value="我只是一个普通的按钮啊~~"/>
+		</form>
+	</body>
+</html>

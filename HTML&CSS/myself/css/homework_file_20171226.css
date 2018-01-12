@@ -1,0 +1,19 @@
+.body{
+	width: 700px;
+	margin: 0 auto;
+}
+
+.tbody{
+	text-align: center;
+	width: 660px;
+	height: 40px;
+	border: 1px solid #000000;
+	background-color: pink;
+	
+	
+}
+.tbody td{
+	border: 1px solid #000000;	
+	white-space:50px;
+	
+}

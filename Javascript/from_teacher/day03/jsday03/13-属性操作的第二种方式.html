@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div onclick="setBodyColor('background', 'pink')">点击我整个页面变成粉色</div>
+		<div onclick="setBodyColor('color', 'skyblue')">点击我整个页面的文字变成天蓝色</div>
+		<script type="text/javascript">
+			//之前知道,属性操作的方式,是利用"."也就是"的"的意思
+			function setBodyColor(attr, color){
+				//每当需要使用变量作为参数的时候,我们应该使用第二种属性操作符,[]
+				//我们在传参的时候非常适合使用这种属性操作符的方式
+				document.body.style[attr] = color
+			}
+		</script>
+	</body>
+</html>

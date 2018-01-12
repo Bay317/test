@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//入参     ->   进入函数的参数,通常在()中
+			//形参     ->   在函数内使用的参数,他是假的"水果"
+			//实参     ->   实际放入函数的参数,他是真正的水果
+			//出参(返回值)     ->     函数的返回值,经过处理后的结果
+			let apple = "苹果"
+			let banana = "香蕉"
+			let cherry = "樱桃"
+			let juice;
+			
+			function show_fruit(fruit){
+				//函数里面才能用return
+				//return就是返回值的意思,也就是出参
+				return fruit + "汁"
+			}
+			juice = show_fruit(cherry)
+			console.log("你得到是" + juice)
+		</script>
+	</body>
+</html>

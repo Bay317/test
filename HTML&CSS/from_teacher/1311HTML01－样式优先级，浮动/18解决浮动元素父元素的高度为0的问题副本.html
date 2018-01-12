@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.son{
+				width: 200px;
+				height: 300px;
+				float: left;
+				background: red;
+			}
+			#wrap{
+				border:3px solid #000;
+				/*height:200px;*/
+				/*overflow: hidden;*/
+				/*float: left;*/
+			}
+			.fix{
+				/*该元素所在的行不允许出现浮动元素*/
+				clear:both;
+				/*width: 100px;
+				height: 100px;*/
+				/*clear:left;
+				clear:right;*/
+			}
+		</style>
+	</head>
+	<body>
+		<!--设置辅助div，使其左右两边不能出现浮动元素，则其会被浮动元素挤到浮动元素的下边。
+		这时父元素为了包裹这个辅助div，只能有一个跟浮动元素高一致的height-->
+		
+<!--	如果要使浮动的父元素高度不塌陷，需要在这个父元素的底部额外插入一个辅助的块级元素，设置clear:both-->		
+		<div id='wrap'>
+			<div class='son'></div>
+			<div class='fix'></div>
+		</div>
+	</body>
+</html>

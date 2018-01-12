@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.nav>ul>li{
+				float: left;
+				width: 180px;
+				height: 50px;
+				background: red;
+				text-align: center;
+				line-height: 50px;
+				border-left:1px solid #fff;
+				list-style: none;
+				color: #fff;
+			}
+			.nav>ul{
+				width: 1200px;
+				margin: 0 auto;
+				/*overflow: hidden;*/
+			}
+			.nav{
+				background: red;
+			}
+			li>ul{
+				border:1px solid red;
+				border-top:0;
+				display: none;
+				color: black;
+				list-style: none;
+			}
+			.container>li>ul>li{
+				border-top:1px solid red;
+				position: relative;
+			}
+			.container>li>ul>li:hover>ul{
+				display: block;
+			}
+			.nav>.container>div{
+				clear: both;
+			}
+			.nav>.container>li:hover>ul{
+				display: block;
+			}
+			.third{
+				position:absolute;
+				top:0;
+				left:178px;
+			}
+			.third>li{
+				padding:0 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='nav'>
+			<ul class='container'>
+				<li>1
+					<ul>
+						<li>
+							11111
+							<ul class='third'>
+								<li>333333</li>
+							</ul>
+						</li>
+						<li>
+							11111
+							<ul class='third'>
+								<li>333333</li>
+							</ul>
+						</li>
+						<li>
+							11111
+							<ul class='third'>
+								<li>333333</li>
+							</ul>
+						</li>
+					</ul>
+				</li>				
+				<div></div>
+			</ul>
+			
+		</div>
+	</body>
+</html>

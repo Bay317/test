@@ -1,0 +1,15 @@
+.main{
+	margin: 0 auto;
+	padding: 0;
+	width: 200px;
+	height: 80px;
+	border: 1px solid #000000;
+	text-align: center;
+}
+
+.main span{
+	text-align:center;
+	font-size: 50px;
+	margin: 0;
+	padding: 0;
+}

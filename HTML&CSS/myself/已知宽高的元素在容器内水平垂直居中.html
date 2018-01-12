@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    body {
+      background: #f0f0f0;
+      height: 100%;
+    }
+    .div1 {
+      background-color: red;
+      /* 已知宽高的弹窗才适用 */
+      width: 500px;
+      height: 400px;
+      /* 使用固定定位 让弹窗固定在窗口的某一位置 参照物永远是窗口 */
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      /* margin-left: -250px; */
+      /* margin-top: -200px; */
+    }
+    .div2 {
+      background-color: #0ff;
+      /* 已知宽高才适用 */
+      width: 200px;
+      height: 200px;
+      /* 使用绝对定位 让div2参照div1定位而不是参照窗口（因为此时需要在div1内水平垂直居中 */
+      position: absolute;
+      /* 让div2距离div1的左边距离为div1宽度的50%，高度同理 */
+      left: 50%;
+      top: 50%;
+      /* 因为移动过头了，再把div2往左移动自身宽度的一半，往上移动自身高度的一半 */
+      margin-left: -100px;
+      margin-top: -100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1">
+    <div class="div2"></div>
+  </div>
+</body>
+</html>

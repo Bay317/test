@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let a = 20;
+			let b = 20;
+			
+			//真(true)/假(false) boolean 布尔类型
+			//通常的:1代表的就是真,0代表就是假
+			//if的小括号中会被任何结论转换成boolean,是真则执行第一个大括号中的内容,是假则执行第二个大括号中的内容
+			if(a > b) {
+				console.log("a大于b")	
+			} else {
+				console.log("a不大于b")
+			}
+			
+			/*
+			 * 如果(判断条件){
+			 * 	判断条件为真,执行这里的代码
+			 * } 否则 {
+			 * 	判断条件为假,执行这里的代码
+			 * }
+			 */
+			let c = 10;
+			let d = 10;
+			let e = "10";
+			
+			//双方只有有一方是字符串类型的就会发生转换并连接
+			console.log(c + d)	//20 充当的是加法
+			console.log(10 + '10')	//1010 充当的是连接符的作用, 第一步,把不是字符串类型的转换成字符串.第二步把左右两边进行连接
+			
+			//js是动态类型的(具备隐式转换)
+			/*
+			 * == 是判断值是否相等
+			 * === 是既要判断值相等又要判断类型相等
+			 */
+			if(c === e){
+				console.log("c和e相等")
+			} else {
+				console.log("c和e不相等")
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<style type="text/css">
+	span {
+		display: inline-block;
+		width: 100px;
+		font-size: 12px;
+		height: 30px;
+		border: 1px solid #eee;
+		text-align: center;
+		line-height: 30px;
+	}
+</style>
+
+<body>
+	<div id="test">
+
+	</div>
+	<script>	
+		const tDiv = document.getElementById('test')
+		for (i = 1; i <= 9; i++) {
+			for (j = 1; j <= i; j++) {
+				tDiv.innerHTML = tDiv.innerHTML + `<span>${i}*${j}=${i * j}</span>`
+			}
+			tDiv.innerHTML = tDiv.innerHTML + '<br/>'
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//函数声明   声明式函数
+			function show() {
+				console.log("show")
+			}
+			var show2;
+			show();
+			show2();
+			
+			//赋值式函数
+			show2 = function() {
+				console.log("show2")
+			}
+
+			//函数声明具有预解析功能,赋值式函数(函数表达式)没有预解析
+		</script>
+	</body>
+</html>

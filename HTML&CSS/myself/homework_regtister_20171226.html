@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/homework_register.css"/>
+	</head>
+	<body>
+		<fieldset id="">
+			<legend>账户信息</legend>
+			用户名：<input type="text" id="userid" name="username" /><br/>
+			密&ensp;码：<input type="password" id="userpassworid" name="userpassword" /><br/>
+			性&ensp;别：
+			<lable for="male">
+				男<input type="radio" id="male" name="sex" checked="checked" />
+			</lable>
+			<lable for="female">
+				女<input type="radio" id="female" name="sex" />	
+			</lable>
+		</fieldset>
+		<br/>	
+		<fieldset id="">			
+			<legend>公司信息</legend>
+			公司名称：<input type="text" id="userid" name="username" /><br/>
+			公司所在地址：
+				<select name="">
+					<option value="">深圳</option>
+					<option value="">广州</option>
+					<option value="">上海</option>
+					<option value="">北京</option>
+					<option value="">内蒙</option>					
+				</select>
+				<select name="">
+					<option value="">宝安</option>
+					<option value="">罗湖</option>
+					<option value="">福田</option>
+					<option value="">南山</option>
+					<option value="">西乡</option>					
+				</select>
+				<select name="">
+					<option value="">深圳</option>
+					<option value="">广州</option>
+					<option value="">上海</option>
+					<option value="">北京</option>
+					<option value="">内蒙</option>					
+				</select><br/><br/><br/>			
+				购买类型用途：
+				IT 
+				<input type="checkbox" checked="checked">
+				通讯设备
+				<input type="checkbox">
+				大家电
+				<input type="checkbox" >
+				办公耗材
+				<input type="checkbox"><br>		
+				公司行业:
+				<select multiple="2" size="4">
+					<option type="checked" selected="selected">
+						IT行业
+					</option>
+					<option>
+						计算机行业
+					</option>		
+					<option>
+						计算机
+					</option>
+					<option>
+						计算机结构
+					</option>					
+				</select><br /><br /><br />
+				公司介绍：
+				<textarea rows="10" cols="25"></textarea><br><br>
+				营业执照上传：
+				<input type="file" /><br><br>
+				<img src="css/reg.jpg" />
+		</fieldset>		
+	</body>
+</html>

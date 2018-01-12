@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//动态语言会发生隐式转换
+			//js数据类型的转换
+			//显示转换和隐式转换
+			let a = 1;
+			let b = '1';
+			
+			//只会比较值
+			//== 左右两边会发生隐式转换
+			//key '1' == '1'
+			if(a == b){
+				console.log("==相等")
+			}
+			
+			//既比较值相等又比较类型相等
+			//=== 不会发生隐式转换
+			//1 === '1'
+			if(a === b){
+				console.log("===相等")
+			}
+			
+			//隐式转换 == a++ ++a +a -a都会做一次隐式转换(字符串转数字)
+			let c = '1';
+			++c//2
+			c++//3
+			console.log(c);
+			
+			let d = "10";
+			//正&负
+			console.log(+d);
+			
+			let e = '1';
+			let f = 2;
+			console.log(+e + f);
+			//隐式转换 数字转字符串
+			let number = 1;
+			console.log(number + "");
+			
+			//显式转换
+			let str = "100"
+			console.log(Number(str))
+			let num = 100;
+			console.log(String(num))
+			console.log(Boolean(num))
+		</script>
+	</body>
+</html>

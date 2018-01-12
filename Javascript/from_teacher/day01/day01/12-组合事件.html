@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<script type="text/javascript">
+			let aDiv = document.getElementsByTagName("div")
+			console.log(aDiv)
+			//length
+			debugger
+			for(var i = 0; i < aDiv.length; i++){
+				aDiv[i].onclick = function(){
+					this.style.background = "pink"
+				}
+			}
+//			aDiv[0].onclick = function(){
+//				aDiv[0].style.background = "pink"
+//			}
+//			aDiv[1].onclick = function(){
+//				aDiv[1].style.background = "pink"
+//			}
+//			aDiv[2].onclick = function(){
+//				aDiv[2].style.background = "pink"
+//			}
+		</script>
+	</body>
+</html>

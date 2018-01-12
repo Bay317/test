@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#citys li{
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="input1" value="" />
+		<input type="button" name="" id="btn" value="搜索" />
+		<ul id="citys">
+			<li>上海</li>
+			<li>深圳</li>
+			<li>北京</li>
+			<li>青岛</li>
+			<li>四川</li>
+			<li>云南</li>
+		</ul>	
+		<script type="text/javascript">
+			//选择元素
+			let oinput = document.getElementById("input1");
+			let osearchbtn = document.getElementById("btn");
+			let ocitys = document.getElementById("citys");
+			let citylist = ocitys.getElementsByTagName("li");
+
+			//绑定事件
+			osearchbtn.onclick = function() {
+				// debugger
+				
+				let searchcitys = oinput.value
+				//				for(i= 0; i < citylist.length; i++){
+				//					citylist[i].style.backgroundColor = ""
+				//					if (searchcitys === citylist[i].innerHTML){
+				//						citylist[i].style.backgroundColor = "yellow"
+				//						return
+				//					}
+				//				}	
+				//					alert ("sorry, the city is not exist.")				
+				//			}
+				clear();
+				let targetli = tocom(searchcitys);
+				draw(targetli)
+			}
+
+			//函数封装
+			function clear() {
+				for (i = 0; i < citylist.length; i++) {
+					citylist[i].style.backgroundColor = ""
+				}
+			}
+
+			function tocom(str) {
+				for (i = 0; i < citylist.length; i++){
+					if (str === citylist[i].innerHTML) {
+						return citylist[i]
+					}
+				}
+				return false
+			}
+
+			function draw(li) {
+				if (li) {
+					li.style.background = "yellow"
+				} else {
+					console.log("sorry")
+				}
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul, li {
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="cityText"/>
+		<input type="button" value="搜索" id="searchBtn"/>
+		<ul id="citys">
+			<li>北京</li>
+			<li>上海</li>
+			<li>广州</li>
+			<li>深圳</li>
+		</ul>
+		<script type="text/javascript">
+			//1.选择元素(触发者,渲染者)
+			let oCityText = document.getElementById("cityText");
+			let oSearchBtn = document.getElementById("searchBtn");
+			let oCitys = document.getElementById("citys");
+			let aCityList = oCitys.getElementsByTagName("li");
+			let flag = false
+			
+			//2.绑定事件
+			oSearchBtn.onclick = function() {
+				//3.查找相应的城市
+				let searchCity = oCityText.value
+				//4.匹配所有城市
+				for(let i = 0; i < aCityList.length; i++){
+					aCityList[i].style.background = ""
+					if(searchCity === aCityList[i].innerHTML){
+						aCityList[i].style.background = "pink"
+						flag = true
+						break
+					}
+				}
+				//5.如果所有的城市都没有被匹配呢?
+				if(!flag){
+					alert("抱歉,所有城市都不匹配")
+				}
+				flag = false
+			}
+		</script>
+	</body>
+</html>

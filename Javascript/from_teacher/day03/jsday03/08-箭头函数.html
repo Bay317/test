@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var aaa = 5;
+			var fun = val => val + 5;
+			
+//			var fun = function(val){
+//				return val + 5
+//			}
+			
+			console.log(fun(aaa))
+			
+			var apple = "苹果"
+			var banana = "香蕉"
+			var cherry = "樱桃"
+			
+			var show_fruit = fruit => fruit + "汁"
+			
+			console.log(show_fruit(cherry))
+			
+			//函数有三种形式
+			//无参无返回值函数
+			//无参函数
+			//无返回值函数
+			//有参有返回值函数
+			
+			//箭头函数 最常见的形式,有参有返回值
+			var fun2 = () => "hello"
+			var square = x => x * x
+//			function square(x) {
+//				return x * x
+//			}
+			console.log(fun2())
+			console.log(square(10));
+			
+			var sum = (num1, num2) => num1 + num2;
+//			function sum(num1, num2) {
+//				return num1 + num2
+//			}
+			console.log(sum(4, 8))
+			
+			//ES6中允许使用箭头函数
+			//一般使用箭头函数有入参有出参
+			//在箭头标志的左边为入参,右边为出参
+			//当入参为单个的时候不需要打小括号(当入参为0个或复数个的时候需要添加())
+			//当函数语句有多条的时候直接写大括号
+			
+//			function boolFun(bool){
+//				if(bool){
+//					return 1
+//				} else {
+//					return 0
+//				}
+//			}
+			var boolFun = bool => {
+				if(bool){
+					return 1
+				} else {
+					return 0
+				}
+			}
+			
+			console.log(boolFun(false))
+		</script>
+	</body>
+</html>

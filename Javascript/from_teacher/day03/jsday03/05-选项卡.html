@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#wrap div,#wrap2 div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+				display: none;
+			}
+			#wrap .block,#wrap2 .block {
+				display: block;
+			}
+			#wrap .active,#wrap2 .active {
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<input type="button" value="1" class="active"/>
+			<input type="button" value="2"/>
+			<input type="button" value="3"/>
+			<div class="block">1111111111</div>
+			<div>2222222222</div>
+			<div>3333333333</div>
+		</div>
+		<div id="wrap2">
+			<input type="button" value="1" class="active"/>
+			<input type="button" value="2"/>
+			<input type="button" value="3"/>
+			<div class="block">1111111111</div>
+			<div>2222222222</div>
+			<div>3333333333</div>
+		</div>
+		
+		<script type="text/javascript">
+			tab("wrap")
+			tab("wrap2")
+			function tab(parent){
+				//1.选择元素
+				let oParent = document.getElementById(parent);
+				let aInput = oParent.getElementsByTagName("input");
+				let aDiv = oParent.getElementsByTagName("div");
+				
+				//2.绑定事件
+				for(let i = 0; i < aInput.length; i++){
+					aInput[i].onclick = function() {
+						//3.事件处理
+						for(let j = 0; j < aInput.length; j++){
+							//a.把所有的按钮都洗白
+							aInput[j].className = "";
+							//b.把所有的div都隐藏
+							aDiv[j].className = ""
+						}
+						//c.把当前点击的按钮变红
+						this.className = "active"
+						//d.把当前点击的按钮的对应的div显示
+						aDiv[i].className = "block"
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

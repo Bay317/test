@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		请输入您现在的金额 <input type="text" />
+		<script type="text/javascript">
+			//假如我有50块钱,我就打乒乓球
+			//假如我有500块钱,我就打羽毛球
+			//假如我有5000块钱,我就打高尔夫
+			let money = 20
+			if(money >= 5000) {
+				console.log("打高尔夫")
+			} else if (money >= 500) {
+				console.log("打羽毛球")
+			} else if (money >= 50) {
+				console.log("打乒乓球")
+			} else {
+				console.log("吹西北风")
+			}
+//			  if() {
+//			  	...
+//			  } else if () {
+//			  	...
+//			  } else {
+//			  	
+//			  }
+			// switch case break default
+			//41 河南 42 湖北 43 湖南 44 广州
+			let proviceCode = "北京"
+			//给switch语句写代码的时候一般要保证有default,为了语句的健壮性
+			switch(proviceCode) {
+				case 41:
+					console.log("我是河南人")
+					break
+				case 42:
+					console.log("我是湖北人")
+					break
+				case 43:
+					console.log("我是湖南人")
+					break
+				case 44:
+					console.log("我是广东人")
+					break
+				default:
+					console.log("请重新输入")
+			}
+		</script>
+	</body>
+</html>

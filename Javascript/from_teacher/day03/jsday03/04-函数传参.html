@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" onclick="setBodyColor('pink')">点击我整个页面变粉色</div>
+		<div id="div2" onclick="setBodyColor('skyblue')">点击我整个页面变蓝色</div>
+		
+		<script type="text/javascript">
+			//函数的存在(包含参数)都是为了代码的复用性
+			function setBodyColor(color){
+				document.body.style.background = color
+			}
+		</script>
+	</body>
+</html>

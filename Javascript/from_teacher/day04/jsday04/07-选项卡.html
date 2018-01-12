@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/* 选项卡代码 */
+			#wrap div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+				display: none;
+			}
+			#wrap .active {
+				background-color: red;
+			}
+			#wrap .block {
+				display: block;
+			}
+			#wrap span {
+				position: absolute;
+				top: 100px;
+			}
+			#wrap .left{
+				left: 10px
+			}
+			#wrap .right{
+				left: 190px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<input type="button" value="1" class="active"/>
+			<input type="button" value="2"/>
+			<input type="button" value="3"/>
+			<div class="block">11111111</div>
+			<div>22222222</div>
+			<div>33333333</div>
+			<span class="left" id="left">←</span>
+			<span class="right" id="right">→</span>
+		</div>
+		
+		<script type="text/javascript">
+			//1.选择元素
+			let oParent = document.getElementById("wrap");
+			let aInput = oParent.getElementsByTagName("input");
+			let aDiv = oParent.getElementsByTagName("div");
+			let oLeft = document.getElementById("left");
+			let oRight = document.getElementById("right");
+			let iNow = 0;
+			
+			for(let i = 0; i < aInput.length; i++){
+				aInput[i].onclick = function(){
+					for(let j = 0; j < aInput.length; j++){
+						aInput[j].className = "";
+						aDiv[j].className = ""
+					}
+					aInput[i].className = "active"
+					aDiv[i].className = "block"
+					iNow = i
+				}
+			}
+			
+			//2.绑定事件
+			oLeft.onclick = function() {
+				//3.渲染
+				for(let i = 0; i < aInput.length; i++){
+					aInput[i].className = "";
+					aDiv[i].className = ""
+				}
+				if(iNow === 0){
+					iNow = aInput.length - 1
+				} else {
+					iNow--
+				}
+				aInput[iNow].className = "active"
+				aDiv[iNow].className = "block"
+			}
+			
+			oRight.onclick = function() {
+				//3.渲染
+				for(let i = 0; i < aInput.length; i++){
+					aInput[i].className = "";
+					aDiv[i].className = ""
+				}
+				if(iNow === aInput.length){
+					iNow = 0
+				} else {
+					iNow++
+				}
+				aInput[iNow % 3].className = "active"
+				aDiv[iNow % 3].className = "block"
+			}
+		</script>
+	</body>
+</html>

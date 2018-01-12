@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			.box{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			
+			div{
+				/*!important->把当前样式的优先级提升到最高.写在样式后面,用空格隔开(分号前面);*/
+				/*!important只提升当前的样式优先级*/
+				background: blue !important;
+				width: 300px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--总结：
+		!important>行间样式>id选择器>类选择器==属性选择器>标签选择器>通配符>浏览器样式>继承-->
+		<div class='box' style="background: black;"></div>
+	</body>
+</html>

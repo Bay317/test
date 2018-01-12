@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//typeof 是判断他属于哪个类型
+			var a = 10;				//Number
+			var b = "hello world"	//String
+			var c = true			//Boolean
+			var d = null			//Null
+			var e;					//Undefined
+			var f = new Object();	//Object
+			var g = function(){}	//Function
+			
+			console.log(typeof a)
+			console.log(typeof b)
+			console.log(typeof c)
+			console.log(typeof d)
+			console.log(typeof e)
+			console.log(typeof f)
+			console.log(typeof g)
+			
+			function typeOfStr(obj){
+				if(typeof obj === "string"){
+					return console.log("该对象是字符串")
+				} else {
+					return console.log("该对象不是字符串")
+				}
+			}
+			typeOfStr(a)
+			typeOfStr(b)
+		</script>
+	</body>
+</html>

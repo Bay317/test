@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">1</div>
+		<div id="div2">2</div>
+		<div id="div3">3</div>
+		<script type="text/javascript">
+//			let apple = "苹果"
+//			function show_fruit(fruit){
+//				return fruit + "汁"
+//			}
+//			let juice = show_fruit(apple)
+
+			let oDiv1 = $("div1")
+			let oDiv2 = $("div2")
+			let oDiv3 = $("div3")
+			
+			//变量的命名:
+			//变量的命名只能是 数字,大小写字母和_和$
+			//变量第一个单词的命名 只能是大小写字母和_和$
+			function $(idName){
+				return document.getElementById(idName)
+			}
+			
+			oDiv1.style.background = "pink"
+			oDiv2.style.background = "pink"
+			oDiv3.style.background = "pink"
+			
+		</script>
+	</body>
+</html>

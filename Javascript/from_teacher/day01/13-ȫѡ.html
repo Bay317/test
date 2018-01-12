@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">全选</div>
+		<div id="div2">反选</div>
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		
+		<script type="text/javascript">
+			//1.选择元素(触发者,渲染者)
+			let oDiv = document.getElementById("div1");
+			let aCheckbox = document.getElementsByTagName("input")
+			
+			//2.绑定事件
+			oDiv.onclick = function(){
+				for(let i = 0; i < aCheckbox.length; i++){
+					aCheckbox[i].checked = true
+				}
+			}
+		</script>
+	</body>
+</html>

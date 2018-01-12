@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//全局变量(可以被任何位置看到)
+			var global = "我在外面"
+			var str = "global_str"
+			function show(){
+				//局部变量(该函数以外看不到)
+				var str = "local_str"
+				console.log(str) //local_str
+				console.log(global) //我在外边
+				showshow();
+				function showshow(){
+					var str = "locallocal_str"
+					console.log(str)
+				}
+			}
+			show()
+			console.log(str)//global_str
+		</script>
+	</body>
+</html>

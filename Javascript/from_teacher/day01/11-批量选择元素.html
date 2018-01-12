@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<p id="p1">ppp</p>
+		<script type="text/javascript">
+			let aDiv = document.getElementsByTagName("div");
+			let aP = document.getElementsByTagName("p");
+//			document.getElementById()
+//			document.getElementsByTagName()
+			console.log(aDiv)
+			//循环访问每一个div
+			//遍历
+			for(let i = 0; i < 3; i++){
+				aDiv[i].style.backgroundColor = "pink"
+			}
+			//aP[0].style.backgroundColor = "pink"
+		</script>
+	</body>
+</html>

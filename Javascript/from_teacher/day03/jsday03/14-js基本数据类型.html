@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//基本数据类型
+			//Number 数字类型
+			//String 字符串类型
+			//Boolean 布尔类型
+			//Null 空类型
+			//Undefined Undefined类型
+			//Symbol 唯一类型
+			
+			var num = 9
+			var str = "深圳"
+			var boo = true
+			var nul = null
+			var und;
+			//var sym = Symbol();
+			//一个合成类型(复合类型)
+			//Object 对象
+			//new 初始化
+			var person = new Object();
+			person.name = "小明"
+			person.age = 30
+			person.sex = "male"
+			
+			var person2 = new Object();
+			person2.name = "小红"
+			person2.age = 28
+			person2.sex = "female"
+			
+			person.wife = person2
+			person2.husband = person
+			
+			console.log(person);
+			console.log(person2);
+			
+			//对象的定义有两种定义方式
+//			var obj = {
+//				name : "小明",
+//				age : 28
+//			}
+//			var obj = new Object()
+//			obj.name = "小明"
+//			obj.age = 28
+		</script>
+	</body>
+</html>

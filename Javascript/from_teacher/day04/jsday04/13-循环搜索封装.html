@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul, li {
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="cityText"/>
+		<input type="button" value="搜索" id="searchBtn"/>
+		<ul id="citys">
+			<li>北京</li> 
+			<li>上海</li>
+			<li>广州</li>
+			<li>深圳</li>
+		</ul>
+		<script type="text/javascript">
+			//1.选择元素(触发者,渲染者)
+			let oCityText = document.getElementById("cityText");
+			let oSearchBtn = document.getElementById("searchBtn");
+			let oCitys = document.getElementById("citys");
+			let aCityList = oCitys.getElementsByTagName("li");
+			
+			//2.绑定事件
+			oSearchBtn.onclick = function() {
+				clear()
+				let targetLi = toCom(oCityText.value)
+				draw(targetLi)
+			}
+			
+			/**
+			 * 该方法用于清除所有li的样式
+			 */
+			function clear() {
+				for(let i = 0; i < aCityList.length; i++) {
+					aCityList[i].style.background = ""
+				}
+			}
+			
+			/**
+			 * 拿相应字符串匹配每个li中的字符串
+			 */
+			function toCom(str) {
+				for(let i = 0; i < aCityList.length; i++){
+					if(str === aCityList[i].innerHTML){
+						return aCityList[i]
+					}
+				}
+				return false
+			}
+			
+			/**
+			 * 将匹配中的li变色
+			 */
+			function draw(li) {
+				if(li) {
+					li.style.background = "pink"
+				} else {
+					alert("抱歉,未找到相关城市")
+				}
+			}
+		</script>
+	</body>
+</html>
