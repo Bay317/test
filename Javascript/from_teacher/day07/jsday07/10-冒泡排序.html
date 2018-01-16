@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let arr = [1, 4, 5, 3, 2]
+			
+			function bubbleSort(sort) {
+				//比较的轮次,轮次为参赛选手的人数 - 1(因为倒数第一名和倒数第二名同时产生),实际上比较的轮次就为4次
+				for(let i = 0; i < arr.length - 1; i++){
+					//具体的比赛
+					for(let j = 0; j < arr.length - 1 - i; j++){
+						toCompare(j, j + 1)
+					}
+				}
+				return sort
+			}
+			
+			/**
+			 * 两个数字两两比较,如果前者下标对应的值大于后者下标对应的值,则交换数组的两个位置
+			 * @param {Object} prev
+			 * @param {Object} next
+			 */
+			function toCompare(prev, next){
+				//如果前者大于后者,就交换位置
+				if(arr[prev] > arr[next]){
+					let temp;
+					temp = arr[prev];
+					arr[prev] = arr[next];
+					arr[next] = temp
+				}
+			}
+			
+			//升序排列
+			console.log(bubbleSort(arr))
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<script type="text/javascript">
+			//数组  Array
+			//数组的定义
+			//两种定义方式
+			//let arr = new Array('a', 'b', 'c');
+			let arr = ['a', 'b', 'c']
+//			let arrayLike = document.getElementsByTagName("div")
+			//特别的.数组的第一个对象下标为0 数组的最后一个对象下标为arr.length - 1
+			console.log(arr);
+			console.log(arr[1])
+//			console.log(arrayLike);
+			//getter&setter
+			arr.length = 10
+			console.log(arr[3])    //undefined
+			//暴力清除数组内容的方法
+			arr.length = 0
+			console.log(arr.length)
+		</script>
+	</body>
+</html>

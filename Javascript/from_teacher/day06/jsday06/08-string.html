@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//str可以看成是一个连续的数组
+			//[h,e,l,l,o, ,w,o,r,l,d,!]
+			let str = "hello world!"
+			
+			console.log(str);
+			console.log(str.length);
+			//两种找到字符串中某个位置的方法     (根据下标找到对应的位置)
+			console.log(str[11]);
+			console.log(str.charAt(11));		//常用,效率高   !
+			
+			//根据对应的位置找到下标
+			//search 是可以达到这个效果的,不过他的应用范围不仅适用于字符串还适用于正则表达式
+//			console.log(str.search("!"));		//11
+			//懒汉模式 / 饿汉模式
+			//indexOf() 会找到第一个满足条件的下标,找到即止
+			console.log(str.indexOf("l"));      //2 懒汉模式
+			//因为indexOf在第八个位置进行搜素
+			console.log(str.indexOf('l', 8))	//9
+			//每当找遍整个字符串都没有的时候就会返回-1 表示没找到相应的字符
+			console.log(str.indexOf('p'))		//-1
+			//lastIndexOf
+			console.log(str.lastIndexOf('l'))	//9
+			//问一个字符串某个/某段字符串出现了几次
+			
+			
+//			function searchChar(str, temp){
+//				return str.split(temp).length - 1
+//			}
+//			console.log(searchChar(strs, temp))
+			//let str = "helloworld"
+			//字符串切割方法 String.prototype.substring()
+			//str.substring(2)  =>   lloworld
+			let strs = "hello world!"
+			let temp = 'l'
+			
+			/**
+			 * 一个字符串某个/某段字符串出现了几次
+			 * @param {String} str  待查询的字符串(hello world)
+			 * @param {String} temp    要查询次数的字符串片段(l)
+			 * @return {Number} 3
+			 */
+			function searchChar(str, temp) {
+				//默认开始查询的位置
+				let index = 0;
+				//默认出现的次数
+				let count = 0
+				//str.indexOf('l', 0) => 2
+				//count = 1
+				//index = 3
+				//str.indexOf('l', 3) => 3
+				//count = 2
+				//index = 4
+				//str.indexOf('l', 4) => 9
+				//count = 3
+				//index = 10
+				//str.indexOf('l', 10) => -1
+				//跳出while循环
+				debugger
+				while(str.indexOf(temp, index) !== -1) {
+					count++
+					index = str.indexOf(temp, index) + 1
+				}
+				return count
+			}
+			console.log(searchChar(strs, temp))
+		</script>
+	</body>
+</html>

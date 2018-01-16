@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="wrap">
+		</ul>
+		<script type="text/javascript">
+			let oUl = document.getElementById("wrap")
+			let colorArr = ['pink', 'yellow', 'blue', 'orange', 'black', 'purple']
+			
+			createLi(500, colorArr)
+			
+			function createLi(liCount, colorArr){
+				for(let i = 0; i < liCount; i++){
+					oUl.innerHTML += '<li style="background: ' + colorArr[i % colorArr.length] + '"></li>'
+				}
+			}
+		</script>
+	</body>
+</html>

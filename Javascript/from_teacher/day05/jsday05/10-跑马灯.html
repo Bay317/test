@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="切换" id="input1"/>
+		<input type="button" value="停止" id="input2"/>
+		<script type="text/javascript">
+			let oStratBtn = document.getElementById("input1")
+			let oEndBtn = document.getElementById("input2")
+			//定时器
+			let timer = null
+			//颜色仓库
+			let colorArr = ['pink', 'skyblue', 'green', 'yellow']
+			//中立变量,每当调用一次定时器的时候都会++
+			let iNow = 0
+			
+			oStratBtn.onclick = function(){
+				//在新创建定时器的时候,需要先清除掉以前可能会有的定时器
+				clearInterval(timer)
+				timer = setInterval(function(){
+					document.body.style.background = colorArr[iNow % colorArr.length]
+					iNow++
+				}, 500)
+			}
+			
+			oEndBtn.onclick = function(){
+				clearInterval(timer)
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let arr = ['a', 'b', 'c']
+			//js的数组不仅可以放一致的数据类型,还可以放不同的数据类型
+//			let show = function (){
+//				console.log("hello")
+//			}
+//			let arr2 = ['Beijing', 1, true, null, , {name : "小张", age : 28}, show]
+//			
+//			console.log(arr2[5].name)
+//			arr2[6]()
+			
+			function show2(){
+				console.log(this)
+			}
+			
+			//数组中的调用 指向数组,同理可得对象中的调用指向对象
+			let arr3 = [show2, 1, 2];
+			console.log(window)
+			console.log(arr3)
+			debugger
+			window.arr3.show2()
+			window.show2();
+		</script>
+	</body>
+</html>

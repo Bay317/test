@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let str = "I love U"
+			//ASCII数组
+//			console.log(str)
+//			//把所有的字符串解析成ASCII数组
+//			for(let i in str){
+//				code.push(str.charCodeAt(i))
+//			}
+			//加密方法
+			function code(str) {
+				let arr = []
+				for(let i in str){
+					arr.push( (str.charCodeAt(i) + 100) * 5)
+				}
+				return arr
+			}
+			
+			//解密方法
+			function decode(arr) {
+				let str = ""
+				for(let ele of arr){
+					str += String.fromCharCode(ele / 5 - 100)
+				}
+				return str
+			}
+			let result = code(str)
+			console.log(result)
+			let last = decode(result)
+			console.log(last)
+			//MD5
+		</script>
+	</body>
+</html>

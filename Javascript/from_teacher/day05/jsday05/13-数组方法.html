@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//构造函数
+			var arr = new Array("a", "b", "c");
+			/**
+			 * Array.push()    在数组的后面添加一个内容
+			 * Array.pop()     在数组的后面删除一个内容
+			 * Array.shift()   在数组的前面删除一个内容
+			 * Array.unshift() 在数组的前面添加一个内容
+			 */
+//			console.log(arr[0])
+			//栈 特点 速度快,空间小,井口式 先进后出 F-I-L-O
+			//堆 特点 速度慢,空间大
+			//队列 先进先出 F-I-F-O
+			
+			arr.push("d")
+			console.log(arr)
+			
+			//删除方法的返回值就是删除的那一个对象
+			let result = arr.pop()
+			console.log(result)
+			
+			var arr2 = ['a', 'b', 'c']
+			arr2.unshift('d')
+			console.log(arr2)
+			
+			let result2 = arr2.shift()
+			console.log(result2)
+			console.log(arr2)
+			
+			//reverse 反转,让整个数组反转
+			var arr3 = ['a', 'b', 'c']
+			arr3.reverse()
+			console.log(arr3)
+			
+			var arr4 = ['a', 'b', 'c', 'd']   // ->  ['b', 'c', 'd']
+			//请用两种方法使数组变成['b', 'c', 'd']
+			//并分析两种方法的效率问题
+			arr4.shift()
+			
+			var arr5 = ['a', 'b', 'c', 'd']
+			arr5.reverse()
+			arr5.pop()
+			arr5.reverse()
+			
+			console.log(arr4)
+			console.log(arr5)
+		</script>
+	</body>
+</html>

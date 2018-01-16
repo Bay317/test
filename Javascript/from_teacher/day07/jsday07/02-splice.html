@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Array.prototype.splice 是数组的方法,用于增,删,改
+			//push,pop,shift,unshift,reverse,Array.from,forEach
+			//增删改查
+			//数据库  DataBase MySQL,Oracle/Mongo
+			//增 : 注册用户,下订单,申请一个QQ/微信
+			//删 : 注销用户,取消订单,删除一条垃圾邮件,人事管理系统(辞退一名员工)
+			//查 : 打开QQ界面的一瞬间,查询员工的履历
+			//改 : 修改密码,修改QQ头像,网店修改价格
+			//Array.prototype.splice
+			//我要删除第二个数据
+			let arr = [1, 2, 3]
+			arr.splice(1)		//第一参数表示开始删除的位置
+			console.log(arr)
+			
+			let arr2 = [1, 2, 3]
+			arr2.splice(1, 1)	//第二个参数表示删除的个数
+			console.log(arr2)
+			
+			let arr3 = [1, 2, 3]
+			arr3.splice(1, 1, 100)	//第三个参数往后都是顺序添加的内容
+			console.log(arr3)
+			
+			let arr4 = [1, 2, 3]
+			arr4.splice(1, 0, 100, 200, 300)
+			console.log(arr4)
+			//splice(deleteStart, deleteCount, item1, item2, item3...)
+			
+			let arr5 = [1, 2, 3]
+			let arrs = [100, 200, 300]
+			//[1, 100, 200, 300, 2, 3]
+			arr5.splice(1, 0, ...arrs)
+			console.log(arr5)
+		</script>
+	</body>
+</html>

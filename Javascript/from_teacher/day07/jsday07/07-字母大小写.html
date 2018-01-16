@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let str = "heLLo"
+			//转大写
+			console.log(str.toUpperCase())
+			//转小写
+			console.log(str.toLowerCase())
+			let str2 = "   hello world  "
+			//去空格
+			console.log(str2.trim())
+			
+			//Jack Ma
+			//Bruce Lee
+			//做一个函数
+			//input : 一个人的英文名称 JACK MA/jack ma/jACk mA
+			//output : 输出一个人的英文名称 所有的名都是小写,姓的首字母大写
+			//Jack MA
+			
+			/**
+			 * 名字优化器
+			 * @param {String} name 原来的名字
+			 * @return {String} newName 现在的名字
+			 */
+			//jack ma
+			function showName(name){
+				//先把接收到的数据转换成数组
+				let arr = [];
+				arr = name.split(" ")
+				//[jack, ma]
+				//先想办法把名 变成 首字母大写
+				arr[0] = arr[0].substring(0, 1).toUpperCase() + arr[0].substring(1).toLowerCase()
+				//[ma]
+				arr[1] = arr[1].toUpperCase()
+				//[Jack, MA]   =>   Jack MA
+				return arr.join(" ")
+			}
+			let my_name = showName("jack ma")
+			
+			//字符串处理的时候 indexOf和substirng他们两个是黄金搭档
+			function showName2(name){
+				//jack ma  -> Jack MA
+				let index = name.indexOf(" ")
+				//jack
+				let first_name = name.substring(0, index)
+				//ma
+				let last_name = name.substring(index + 1)
+				console.log(first_name)
+				console.log(last_name)
+				first_name = first_name.substring(0, 1).toUpperCase() + first_name.substring(1).toLowerCase()
+				last_name = last_name.toUpperCase()
+				return first_name + " " + last_name
+			}
+			console.log(showName2("jACk mA"));
+			
+			function showName3(name){
+				return name.substring(0, 1).toUpperCase() + 
+					   name.substring(1, name.indexOf(" ")).toLowerCase() + 
+					   name.substring(name.indexOf(" ")).toUpperCase()
+			}
+			console.log(showName3("jACk mA"))
+			
+			let showName4 = name => name.substring(0, 1).toUpperCase() + name.substring(1, name.indexOf(" ")).toLowerCase() + name.substring(name.indexOf(" ")).toUpperCase()
+			
+			console.log(showName4("jACk mA"))
+		</script>
+	</body>
+</html>

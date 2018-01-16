@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let obj = {
+				name : "张三",
+				age : 25,
+				sex : "male"
+			}
+			let arr = [1,2,3]
+			arr.a = "hello"
+			
+			//通常遍历没有length属性的或者key不为数字的对象
+			//遍历对象
+//			for(let key in arr) {
+//				console.log(key)
+//				let value = arr[key]
+//				console.log(value)
+//			}
+
+			//遍历数组真正方法 Array.ForEach
+			arr.forEach(function(value, index, array){
+				console.log(index)  //key
+				console.log(value)  //value
+			})
+			
+			//数组中的每个元素(value)
+			arr.forEach( ele => console.log(ele) )
+		</script>
+	</body>
+</html>

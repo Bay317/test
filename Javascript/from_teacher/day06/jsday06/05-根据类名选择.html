@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li class="box1"></li>
+			<li class="box1"></li>
+			<li></li>
+		</ul>
+		<ul>
+			<li></li>
+			<li class="box1"></li>
+			<li class="box1"></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			//HTMLCollection  Array Like(类数组)
+//			let aLi = document.getElementsByTagName("li");
+//			for(let i = 0; i < aLi.length; i++){
+//				if(aLi[i].className === "box1"){
+//					aLi[i].style.background = "pink"
+//				}
+//			}
+			//HTMLCollection 
+			let aBox1 = document.getElementsByClassName("box1")
+			for(let ele of aBox1){
+				ele.style.background = "pink"
+			}
+		</script>
+	</body>
+</html>

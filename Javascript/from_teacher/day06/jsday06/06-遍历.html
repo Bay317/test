@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			//HTMLCollection
+			let aLi = document.getElementsByTagName("li");
+			
+			console.log(aLi)
+			//在aLi这个对象中进行遍历,所有的节点都会当做是aLi的属性,for...in循环遍历的是key(键)
+//			for(let key in aLi){
+//				aLi[key].style.background = "pink"
+//			}
+			
+			//for...of
+			//在aLi这个对象中进行遍历,所有的节点都会被查询到,for...of循环遍历的是value(值)
+//			for(let value of aLi) {
+//				console.log(value)
+//				value.style.background = "pink"
+//			}
+			
+			//由于HTMLCollection并不是一个对象而是一个类对象,所以他可以被迭代可以被遍历,但是不能直接使用数组中任意方法
+			//所以在此例中,我们需要先将该对象转换成一个数组才可以,
+			//转换数组的方法    ->    Array.from
+//			forEach(function(currentValue, index, array){
+//				currentValue : 当前被遍历的对象的value(值)
+//				index : 当前被遍历的对象的key(键)
+//				array : 整个过程中被遍历的数组
+//			})
+			Array.from(aLi).forEach(function(value, index, array){
+				value.style.background = "pink"
+			})
+		</script>
+	</body>
+</html>

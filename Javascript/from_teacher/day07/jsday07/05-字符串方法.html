@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let str = 'abcdefg'
+			console.log(str.length)		//7
+			console.log(str[2])			//c
+			console.log(str.charAt(2))	//c
+			console.log(str.charCodeAt(2))		//99
+			console.log(String.fromCharCode(99))  //c  
+			//code
+			//密码系统,就是这么衍生过来的
+			//I love U
+			let str2 = "I love U"
+			//ASCII数组
+			let code = []
+			console.log(str2)
+			//把所有的字符串解析成ASCII数组
+			for(let i in str2){
+				debugger
+				code.push(str2.charCodeAt(i))
+			}
+			let result = ""
+			//把数组中的每个ASCII拼接成一个字符串
+			for(let ele of code){
+				result += String.fromCharCode(ele)
+			}
+			console.log(result)
+		</script>
+	</body>
+</html>

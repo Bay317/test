@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			let str = "文本"     //文本
+//			let str2 = new String("文本2")
+			
+			//字符串和数组之间的转换
+			//Array.prototype.join    数组转字符串
+			//String.prototype.split    字符串转数组
+			let arr = ['a', 'b', 'c']
+			let str = arr.join("");			//默认的连接符为','
+			//一般情况下会用""空字符串,这样连接出来的字符串就是一个完整连续的
+			console.log(str);
+			
+			let str2 = 'hello world';
+			let arr2 = str2.split(" ");
+			//默认没有分割符,整个字符串会变成数组的一个对象
+			//一般情况下会有""空字符串,这样分割出来的数组就是一个完全分散的数组(每个字母,每个空格,每个标点)
+			console.log(arr2);
+		</script>
+	</body>
+</html>

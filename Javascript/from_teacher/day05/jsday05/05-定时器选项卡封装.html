@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/* 选项卡代码 */
+			#wrap div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+				display: none;
+			}
+			#wrap .active {
+				background-color: red;
+			}
+			#wrap .block {
+				display: block;
+			}
+			#wrap span {
+				position: absolute;
+				top: 100px;
+			}
+			#wrap .left{
+				left: 10px
+			}
+			#wrap .right{
+				left: 190px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<input type="button" value="1" class="active"/>
+			<input type="button" value="2"/>
+			<input type="button" value="3"/>
+			<div class="block">11111111</div>
+			<div>22222222</div>
+			<div>33333333</div>
+			<span class="left" id="left">←</span>
+			<span class="right" id="right">→</span>
+		</div>
+		
+		<script type="text/javascript">
+			//1.选择元素
+			let oParent = document.getElementById("wrap");
+			let aInput = oParent.getElementsByTagName("input");
+			let aDiv = oParent.getElementsByTagName("div");
+			let oLeft = document.getElementById("left");
+			let oRight = document.getElementById("right");
+			//变红的按钮的下标
+			let iNow = 0;
+			//定时器
+			let timer = null;
+			
+			//点击的业务处理
+			for(let i = 0; i < aInput.length; i++){
+				aInput[i].onclick = function(){
+					iNow = i
+					changeTab(iNow)
+				}
+			}
+			
+			//左箭头点击事件
+			oLeft.onclick = function() {
+				if(iNow === 0){
+					iNow = aInput.length - 1
+				} else {
+					iNow--
+				}
+				changeTab(iNow)
+			}
+			
+			//右箭头点击事件
+			oRight.onclick = function() {
+				if(iNow === aInput.length - 1){
+					iNow = 0
+				} else {
+					iNow++
+				}
+				changeTab(iNow)
+			}
+			
+			//定时器初始化
+			timer = setInterval(function(){
+				//3.把下一个按钮变红
+				if(iNow === aInput.length - 1) {
+					iNow = 0
+				} else {
+					iNow++
+				}
+				changeTab(iNow)
+			}, 500)
+			
+			//当聚焦到选项卡时,定时器被消灭
+			oParent.onmouseover = function() {
+				clearInterval(timer)
+			}
+			
+			//当失焦选项卡时,定时器重新创建
+			oParent.onmouseout = function(){
+				timer = setInterval(function(){
+					//3.把下一个按钮变红
+					if(iNow === aInput.length - 1) {
+						iNow = 0
+					} else {
+						iNow++
+					}
+					changeTab(iNow)
+				}, 500)
+			}
+			
+			function changeTab(index){
+				for(let j = 0; j < aInput.length; j++){
+					aInput[j].className = "";
+					aDiv[j].className = ""
+				}
+				aInput[index].className = "active"
+				aDiv[index].className = "block"
+			}
+		</script>
+	</body>
+</html>

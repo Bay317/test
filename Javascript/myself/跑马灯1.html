@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#wrap input {
+				width: 20px;
+			}
+			
+			#wrap div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+				display: none;
+			}
+			
+			#wrap .block {
+				display: block;
+			}
+			
+			#wrap .active {
+				background-color: red;
+			}
+			
+			#wrap span {
+				position: absolute;
+			}
+			
+			#left {
+				float: left;
+				left: 10px;
+			}
+			
+			#right {
+				float: right;
+				left: 180px;
+			}
+		</style>		
+	</head>
+	<body>
+		<div id="wrap">
+			<input type="text" value="1" class="active" />
+			<input type="text" value="2" />
+			<input type="text" value="3" />
+			<div id="button" class="block">22</div>
+			<div>ww</div>
+			<div>eee</div>
+			<span id="left"> <-- </span>
+			<span id="right"> --> </span>
+		</div>
+		<script type="text/javascript">
+			//选择元素
+			let aParent = document.getElementById('wrap');
+			let aInput = aParent.getElementsByTagName('input');
+			let aDiv = aParent.getElementsByTagName('div')
+			let timer = null;
+			let inow = 0;
+
+			timer = setInterval(function() {
+				for (j = 0; j < aInput.length; j++) {
+					aInput[j].className = ''
+					aDiv[j].className = ''
+				}
+				if (inow === aInput.length - 1) {
+					inow = 0
+				} else {
+					inow++
+				}
+				aInput[inow].className = 'active'
+				aDiv[inow].className = 'block'
+			}, 300)
+
+			aParent.onmouseover = function() {
+				clearInterval(timer)
+			}
+
+			aParent.onmouseout = function() {
+				timer = setInterval(function() {
+					for (j = 0; j < aInput.length; j++) {
+						aInput[j].className = ''
+						aDiv[j].className = ''
+					}
+					if (inow === aInput.length - 1) {
+						inow = 0
+					} else {
+						inow++
+					}
+					aInput[inow].className = 'active'
+					aDiv[inow].className = 'block'
+				}, 300)
+			}
+		</script>
+	</body>
+</html>

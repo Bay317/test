@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="result"/><br />
+		<input class="book" type="checkbox" value="西游记"/>西游记<br />
+		<input class="book" type="checkbox" value="红楼梦"/>红楼梦<br />
+		<input class="book" type="checkbox" value="水浒传"/>水浒传<br />
+		<input class="book" type="checkbox" value="三国演义"/>三国演义<br />
+		
+		<script type="text/javascript">
+			let books = document.getElementsByClassName("book");
+			let result = document.getElementById("result");
+			
+			//点击书本对应checkbox会添加到文本框中
+			for(let i = 0; i < books.length; i++) {
+				//访问每个checkbox
+				books[i].onclick = function() {
+					let checkBookName = books[i].value    //西游记||红楼梦||水浒传
+					//文本框的中的内容
+					//判断我是要删这本书还是增这本书
+					//西游记,红楼梦,水浒传.indexOf(红楼梦) -> 4
+					//没有这本书应该添加
+					let resultArr = result.value.split(',') //[西游记,红楼梦,水浒传]
+					//换言之,如果checkbox选中意味着我要添加,反之意味着我要删除
+					if(books[i].checked) {
+						if(result.value === ""){
+							//待添加的书的名字						
+							//添加多本书的时候中间还需要,作为分割符
+							//添加第一本书的时候直接添加书名
+							//添加其他书的时候需要添加书名和逗号
+							result.value += checkBookName	
+						} else {
+							result.value += ',' + checkBookName
+						}
+					} else {
+						//resuleArr[西游记,红楼梦,水浒传]
+						//checkBookName红楼梦
+						for(let i = 0; i < resultArr.length; i++){
+							if(checkBookName === resultArr[i]){
+								resultArr.splice(i, 1)
+								break
+							}
+						}
+						result.value = resultArr
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

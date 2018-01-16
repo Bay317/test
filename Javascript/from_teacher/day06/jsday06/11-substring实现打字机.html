@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1 {
+				width: 200px;
+				border: 1px solid black;
+				min-height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="开始" id="input1"/>
+		<input type="button" value="收缩" id="input2"/>
+		<!-- 渲染区 -->
+		<div id="div1"></div>
+		<script type="text/javascript">
+			let oInput1 = document.getElementById("input1");
+			let oInput2 = document.getElementById("input2");
+			let oDiv1 = document.getElementById("div1");
+			
+			let timer = null
+			let result = "新时代，党要有新气象新作为。1月11日，习近平总书记在十九届中央纪委二次全会上发表重要讲话，深刻阐述了党的十九大关于全面从严治党的战略部署，进一步总结了党的十八大以来全面从严治党的重要经验，深入分析了党面临的风险和挑战，明确提出了当前和今后一个时期全面从严治党的总体要求和主要任务，为把全面从严治党引向深入，开创全面从严治党新局面，作了科学的战略部署。"  //源数据
+			let iNow = 0
+			//事件绑定
+			oInput1.onclick = function(){
+				//按时清除定时器
+				clearInterval(timer)
+				//每次点击的时候都要瞬间抓取当时的iNow
+				iNow = oDiv1.innerHTML.length
+				timer = setInterval(function(){
+					//输出一个字
+					oDiv1.innerHTML = result.substring(0, iNow++)
+					//当所有的文本皆输出完毕的时候.
+					if(oDiv1.innerHTML === result){
+						clearInterval(timer)
+					}
+				}, 50)
+			}
+			
+			oInput2.onclick = function(){
+				clearInterval(timer)
+				iNow = oDiv1.innerHTML.length
+				timer = setInterval(function(){
+					oDiv1.innerHTML = result.substring(0, iNow--)
+					if(oDiv1.innerHTML === ""){
+						clearInterval(timer)
+					}
+				}, 50)
+			}
+		</script>
+	</body>
+</html>

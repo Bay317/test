@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let arr = [1, 4, 9, 2]
+			console.log(arr.sort())
+			
+			//他的默认排序方法是根据Unicode码进行排序
+			//a -> 97
+			//苹 -> 0x....
+			let arr2 = ["apple", "banana", "cherry", 1, 9, "苹果"]
+			console.log(arr2.sort())
+			
+			let arr3 = [1, 11, 22, 2]
+			console.log(arr3.sort())   //1, 11, 2, 22
+			
+			let arr4 = [22, 11, 2, 1]  //1, 2, 11, 22
+			arr4.sort(function(a, b){
+				if(a < b){
+					//不改变
+					return -1
+				} else if(a == b) {
+					//不改变
+					return 0
+				} else if(a > b) {
+					//改变
+					return 1
+				}
+			})
+			console.log(arr4)
+			//如果compareFunction 两个数字比较返回的是正数的话,就交换两个数字的位置
+			//如果 两个相邻数字比较返回的是非正数,就不交换
+			let arr5 = [1, 11, 2, 22]
+			arr5.sort(function(a, b){
+				return b - a
+			})
+			console.log(arr5)
+			
+			let arr6 = [1, 11, 2, 22];
+			arr6.sort((a, b) => a - b)
+		</script>
+	</body>
+</html>

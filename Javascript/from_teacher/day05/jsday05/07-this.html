@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">1</div>
+		<script type="text/javascript">
+			//this   ->     谁调用就指向谁
+			let oDiv1 = document.getElementById("div1");
+//			oDiv1.style.height = "100px"
+			//在事件中的操作,严格是按照谁调用就指向谁的原则
+//			oDiv1.onclick = function(){
+//				this.style.background = "pink"    //this -> oDiv1
+//			}
+
+//			oDiv1.onclick = function() {
+//				window.show()
+//			}
+//			
+//			function show(){
+//				console.log(this)				  //就近原则
+//				this.style.background = "pink"    //this -> window
+//			}
+			//所有的函数内的this都是指向window
+			
+//			oDiv1.onclick = function(){
+//				window.setTimeout(function(){
+//					this.style.background = "pink"			//this -> window
+//				}, 500)
+//				//在定时器中this也都是指向window
+//			}
+			
+			oDiv1.onclick = function(){
+				let _this = this
+				show(oDiv1)
+			}
+			
+			function show(_this){
+				_this.style.background = "pink"
+			}
+
+//			let square = x => x * x
+//			let result = square(5);
+//			console.log(result)
+			
+			//*TODO
+//			function show(color, _this){
+//				return _this.style.backgroundColor = color
+//			}
+//			oDiv1.onclick = function(){
+//				let _this = this;
+////				show("pink", _this)
+//				("pink", _this) => {_this.style.background = color}
+//			}
+		</script>
+	</body>
+</html>

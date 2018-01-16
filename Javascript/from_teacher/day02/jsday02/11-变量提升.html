@@ -3,12 +3,38 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style>
+			#div1 {
+				color: red;
+			}
+			#div2 {
+				color: blue;
+			}
+			#div3 {
+				color: yellow;
+			}
+		</style>
 	</head>
 	<body>
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<div id="div3"></div>
+
 		<script type="text/javascript">
-			console.log(a)	//undefined
-			var a = 123;
-			console.log(a)	//123
+			function abc(id) {
+				let element = document.getElementById(id)
+				for (let i = 1; i <= 9; i++) {
+					element.innerHTML += "<p>"
+					for (let j = 1; j <= i; j++) {
+						element.innerHTML += "<span>" + j + "*" + i + "=" + i * j + "</span>";
+					}
+					element.innerHTML += "</p>"
+				}
+			}
+
+			abc('div1')
+			abc('div2')
+			abc('div3')
 		</script>
 	</body>
 </html>

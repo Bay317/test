@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//setTimeout()设置定时器,只会延迟执行一次
+//			clearTimeout()清除定时器
+//			setInterval()
+//			clearInterval()
+			//定时器第一种写法,直接在内部写函数体
+//			setTimeout(function(){
+//				console.log("hello")
+//			}, 2000)
+			
+//			setTimeout(fn, time)	//在多少时间后执行fn
+
+			
+//			setTimeout(function(){
+//				show()
+//			}, 2000)
+//			
+//			function show() {
+//				console.log("hello")
+//			}
+
+			//定时器第二种写法,函数调用(只说明文字,不能加小括号)
+//			window.setTimeout(show, 2000)
+//			
+//			function show(){
+//				console.log("hello")
+//			}
+			
+			//定时器的第三种写法,带参的函数怎么调用
+			let timer = window.setTimeout('show("world")', 2000)
+			let timer2 = window.setTimeout('show("小明")', 2000)
+			console.log(timer)
+			clearTimeout(timer) //清除定时器,是要说明清除的是哪一个定时器
+			function show(name) {
+				console.log("hello " + name)
+			}
+		</script>
+	</body>
+</html>

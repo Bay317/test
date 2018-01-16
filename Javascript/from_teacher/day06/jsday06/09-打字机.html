@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1 {
+				width: 200px;
+				border: 1px solid black;
+				min-height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="开始" id="input1"/>
+		<input type="button" value="收缩" id="input2"/>
+		<!-- 渲染区 -->
+		<div id="div1"></div>
+		<script type="text/javascript">
+			let oInput1 = document.getElementById("input1");
+			let oInput2 = document.getElementById("input2");
+			let oDiv1 = document.getElementById("div1");
+			
+			let timer = null
+			let result = "我要你的爱"
+			//0.1 我
+			//0.2 我要
+			//0.3 我要你
+			//0.4 我要你的
+			//0.5 我要你的爱
+			
+			//我|要|你|的|爱
+			let arrResult = []
+			//['我', '要', '你', '的', '爱']
+			oInput1.onclick = function(){
+				arrResult = result.split("");
+				clearInterval(timer)
+				timer = setInterval(function(){
+					oDiv1.innerHTML += arrResult.shift()
+					if(arrResult.length === 0){
+						clearInterval(timer)
+					}
+				}, 50)
+			}
+			
+			//0   我要你的爱
+			//0.1 我要你的
+			//0.2 我要你
+			//0.3 我要
+			//0.4 我
+			//0.5 ""
+			//[我, 要, 你, 的, 爱]
+			oInput2.onclick = function(){
+				let arrResult2 = oDiv1.innerHTML.split("");
+				timer = setInterval(function(){
+//					['我', '要', '你', '的']
+					arrResult2.pop()
+					//我要你的
+					oDiv1.innerHTML = arrResult2.join("") 
+				}, 50)
+			}
+			//一次性的(只能用一次)
+		</script>
+	</body>
+</html>
