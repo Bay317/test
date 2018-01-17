@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <script>
+    let atr = document.getElementsByTagName("tr")
+  
+    for (let i = 0; i < atr.length; i++) {
+      let atd = atr[i].getElementsByTagName('td')
+      debugger
+      for (let j = 0; j < atd.length; j++) {
+        if (i % 2 === 0) {
+          atd[j].style.background = "red"
+          atd[j].style.width = "100px"
+          atd[j].style.height = "100px"
+        } else if (i % 2 === 1) {
+          atd[j].style.background = "blue"
+          atd[j].style.width = "100px"
+          atd[j].style.height = "100px"
+        }
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>

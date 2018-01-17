@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<script type="text/javascript">
+			let oLi = document.getElementsByTagName("li")[0]
+			let oParent = oLi.parentElement  //父节点一定是Element/Document/DocumentFragment
+			//获取当前元素的父元素
+//			oLi.parentElement||oLi.parentNode
+			console.log(oParent)
+		</script>
+	</body>
+</html>

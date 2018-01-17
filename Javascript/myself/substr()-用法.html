@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>	
+		let str = 'jack ma sha ya ka'
+		function showname(s){
+			let arr = s.split(' ');			 
+			for(let i = 0; i < arr.length; i++){
+				// 把每个首字母变成大写
+				arr[i] = arr[i].substring(0,1).toUpperCase() + arr[i].substring(1).toLowerCase()
+			}
+			arr.join(' ')
+			console.log(arr.join(' '))
+		}
+		showname(str)
+	
+	</script>
+</body>
+
+</html>

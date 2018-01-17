@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onload = function() {
+				let oUl = document.getElementsByTagName("ul")[0]
+				let aLi = document.getElementsByTagName("li")
+				console.log(aLi.length)
+				oUl.innerHTML += "<li></li>"
+				console.log(aLi.length)
+				for(let ele of aLi){
+					ele.style.background = "pink"
+				}
+			}
+		</script>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>

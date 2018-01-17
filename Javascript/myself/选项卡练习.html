@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+			#wrap div,#wrap2 div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+        display: none;
+			}
+
+			#wrap .show,#wrap2 .show {
+				display: block;
+			}
+			#wrap .active,#wrap2 .active {
+				background-color: red;
+			}
+		</style>
+</head>
+<body>
+		<div id="wrap">
+        <input type="button" value="1" class="active"/>
+        <input type="button" value="2"/>
+        <input type="button" value="3"/>
+        <div class="show">1111111111</div>
+        <div>2222222222</div>
+        <div>3333333333</div>
+      </div>
+  <script>
+    let aParent = document.getElementById("wrap")
+    let aBtn= aParent.getElementsByTagName("input")
+    let aDiv= aParent.getElementsByTagName("div")
+    
+    for(let i = 0; i < aBtn.length; i++){
+      aBtn[i].onclick = function(){
+        for(j = 0; j < aBtn.length; j++){
+          aBtn[j].className = ""
+          aDiv[j].className = ""
+        }
+        aBtn[i].className = "active"
+        aDiv[i].className = "show"
+      }
+    }
+
+
+  </script>
+</body>
+</html>

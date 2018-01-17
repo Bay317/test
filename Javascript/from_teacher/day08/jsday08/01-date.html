@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script type="text/javascript">
+			//创建一个时间对象,并且以当前,当地时间为准的时间对象
+			let oDate = new Date();
+			console.log(oDate)
+			//这时候这个0其实是时间戳单位
+			//这个时间戳单位,在js中没有专门的timestamp这个单位表示,所以用number来表示(时间戳默认就是ms)
+			//代表的是格林威治当地时间1970年1月1日 0时0分0秒
+			let oDate2 = new Date(10000000000000);
+			console.log(oDate2)
+			let oDate3 = new Date(2018, 1, 1);
+			console.log(oDate3)
+			//声明时间对象的三种方式
+			//时间对象既可以是现在也可以是过去还可以是未来
+			//拿到年
+			let year = oDate.getFullYear()
+			//世界协调时间(格林威治时间)
+			console.log(year)
+			
+			//拿到月 0-11*
+			let month = oDate.getMonth() + 1
+			console.log(month)
+			
+			//日
+			let date = oDate.getDate()
+			console.log(date)
+			
+			//时
+			let hour = oDate.getHours()
+			console.log(hour)
+			
+			//分
+			let minute = oDate.getMinutes()
+			console.log(minute)
+			
+			//秒
+			let second = oDate.getSeconds()
+			console.log(second)
+			
+			//星期 0-6 其中0代表的是星期日
+			let weekday = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
+			let day = oDate.getDay();
+			console.log(day)
+			
+			let oDiv = document.getElementById("div1")
+			oDiv.innerHTML = year + "年" + month + "月" + date + "日" + weekday[day] + " " + changeTime(hour) + ":" + changeTime(minute) + ":" + changeTime(second)
+		
+			function changeTime(time){
+				if(time < 10){
+					return "0" + time
+				} else {
+					return time
+				}
+			}
+		</script>
+	</body>
+</html>

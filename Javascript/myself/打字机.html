@@ -20,7 +20,7 @@
 			let aInput2 = document.getElementById('input2');
 			let aDiv = document.getElementById('div1');
 			let timer = null;
-			// let inow = 0;
+			let inow = 0;
 			let result = '每一次输出的都一样'
 			
 			//开始
@@ -29,33 +29,30 @@
 				//点击时先清楚定时器
 				clearInterval(timer)
 				//点击的瞬间adiv.innerHTML.length会赋值给inow，inow就会记住此时的adiv.innerHTML的长度
-					let inow = aDiv.innerHTML.length
+					inow = aDiv.innerHTML.length
 					//设置一个定时器
 					timer = setInterval(function(){
 						//result.substring 会把截取当值给adiv.innerHTML
 						aDiv.innerHTML = result.substring(0, inow++)
 						//判断当aDiv.innerHTML等于result,那么就设置一个清除定时器
 						if(aDiv.innerHTML === result){
+							
 							clearInterval(timer)
 						}
-					},100)				
+					},500)				
 			}
 			//收起
-      aInput2.onclick = function() {
-        clearInterval(timer)
-        let inow = aDiv.innerHTML.length
-
-
-        timer = setInterval(function() {
-          // debugger
-          aDiv.innerHTML = result.substring(0, inow--)
-          if (aDiv.innerHTML === '') {
-            clearInterval(timer)
-          }
-        }, 500)
-
-        
-      }
+			debugger
+			aInput2.onclick = function(){
+				clearInterval(timer)
+				inow = aDiv.innerHTML.length
+			timer = setInterval(function(){
+				aDiv.innerHTML = result.substring(0, inow--)
+				if(aDiv.innerHTML === result){
+					clearInterval(timer)
+					}
+				},500)
+			}
 						
 		</script>
 	</body>
