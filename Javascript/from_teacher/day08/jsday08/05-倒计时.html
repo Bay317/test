@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script type="text/javascript">
+			let oDiv = document.getElementById('div1')
+			
+			let endDate = new Date(2018, 1, 1);
+			let nowDate = new Date();
+			
+			console.log(endDate)
+			console.log(nowDate)
+			//时间对象都可以互相之间做减法
+			//因为时间戳
+			//如果两者的差值是正数,则证明前者是后者的未来
+			//反之前者是后者的过去
+			let timestamp = endDate - nowDate;
+			
+			console.log(timestamp)  //差值是ms
+			//1s -> 1000ms 
+			//1min -> 60s
+			//1hour -> 60min
+			//1day -> 24hour
+			
+			//100000s
+			//1min -> 60s
+			//1hour -> 3600s
+			//1day -> 86400s
+			//100000/86400 -> 1天
+			//100000%86400 -> 13600s
+			//100000%86400/3600 -> 3小时
+			//100000%86400%3600/60 -> x分钟
+			//100000%86400%3600%60 -> y秒
+			
+			//100000%86400/3600
+			//100000%3600/60
+			//100000%60
+			let changeTime = time => (time < 10) ? "0" + time : "" + time
+			//如果时间不大于0,早就错过特卖
+			if(timestamp > 0){
+				//第一步: 将所有的时间转换成我们熟悉的秒
+				let time = Math.floor(timestamp/1000)
+				console.log(time)
+				
+				//第二步 : 将所有秒数转换成天数,并向下取整
+				let iD = Math.floor(time/86400)
+				console.log(iD)
+				
+				//第三步 : 将天数剩下的秒数转换成小时
+				let hour_time = time%86400
+				let iH = Math.floor(time%86400/3600)
+				console.log(iH)
+				
+				//第四步 : 将天数和小时数剩下的秒数转换成分钟
+				let minutes_time = time%3600
+				let iM = Math.floor(time%3600/60)
+				console.log(iM)
+				
+				//第五步 : 剩下所有人都不要的时间就变成秒
+				let iS = Math.floor(time%60)
+				console.log(iS)
+				
+				oDiv.innerHTML = changeTime(iD) + " : " + changeTime(iH) + " : " +
+				+ changeTime(iM) + " : " + changeTime(iS)
+			}
+		</script>
+	</body>
+</html>

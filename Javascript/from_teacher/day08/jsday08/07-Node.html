@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>123</li>
+			<li></li>
+			<li></li>
+		</ul>
+		<!--
+        	123
+        -->
+		<script type="text/javascript">
+			//Node.nodeType
+			//nodeType 属性可用来区分不同类型的节点，比如 元素, 文本 和 注释
+			//Document 一个页面有且仅有一个document,他用来构建DOM树
+			//Element 其实就是tag,所有的完整的标签(有头有尾)都会被看成是Element
+			//Text 标签中的文本内容 都会被看成是Text
+			console.log(document.nodeType)
+			console.log(document.body.nodeType)
+			console.log(document.getElementsByTagName("li")[0].nodeType)
+			/*
+			 * 1 -> 元素节点(标签)
+			 * 3 -> 文本节点
+			 * 9 -> 整个文档,<!DOCTYPE html>
+			 */
+		</script>
+	</body>
+</html>

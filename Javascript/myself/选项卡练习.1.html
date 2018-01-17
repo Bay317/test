@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+			#wrap div,#wrap2 div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+        display: none;
+			}
+
+			#wrap .show,#wrap2 .show {
+				display: block;
+			}
+			#wrap .active,#wrap2 .active {
+				background-color: red;
+			}
+		</style>
+</head>
+<body>
+		<div id="wrap">
+        <input type="button" value="1" class="active"/>
+        <input type="button" value="2"/>
+        <input type="button" value="3"/>
+        <div class="show">1111111111</div>
+        <div>2222222222</div>
+        <div>3333333333</div>
+        <span id="left"><--</span>
+        <span id="right" >--></span>
+      </div>
+  <script>
+    let aParent= document.getElementById('wrap');
+    let aInput = aParent.getElementsByTagName('input');
+    let aDiv = aParent.getElementsByTagName('div');
+    let aLeft = document.getElementById('left');
+    let aRight = document.getElementById('right');
+    let inow = 0;
+    
+    for(let i = 0; i < aInput.length; i++){
+      aInput[i].onclick = function(){  
+        changetab(i)
+        // debugger     
+        // for(let j = 0; j < aInput.length; j++){
+        // aInput[j].className = ''
+        // aDiv[j].className = ''
+        // }
+      //  aInput[i].className = 'active'
+      //  aDiv[i].className = 'show'
+       inow = i
+      }
+    }
+ 
+    function changetab(activeIndex){
+      for(let j = 0; j < aInput.length; j++){
+        aInput[j].className = ''
+        aDiv[j].className = ''
+        }
+      aInput[activeIndex].className = 'active'
+      aDiv[activeIndex].className = 'show'
+    }
+
+   // 左箭头
+    aLeft.onclick = function(){
+      // for(let j = 0; j < aInput.length; j++){
+      //   aInput[j].className = ''
+      //   aDiv[j].className = ''
+      //   }
+      if(inow === 0){
+        inow = aInput.length-1
+      } else {
+        inow--
+      }   
+      changetab(inow)
+      // aInput[inow].className = 'active'
+      // aDiv[inow].className = 'show'
+    }
+    // 右箭头
+    aRight.onclick = function(){
+      // for(let j = 0; j < aInput.length; j++){
+      //   aInput[j].className = ''
+      //   aDiv[j].className = ''
+      //   }
+      if(inow === aInput.length-1){
+        inow = 0
+      } else {
+        inow++
+      }
+      changetab(inow)
+      // aInput[inow].className = 'active'
+      // aDiv[inow].className = 'show'
+    }
+
+
+  </script>
+</body>
+</html>

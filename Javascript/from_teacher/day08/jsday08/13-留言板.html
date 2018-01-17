@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input id="txt" type="text" />
+		<input id="btn" type="button" value="留言"/>
+		<!-- 渲染区  -->
+		<ul id="result">
+			
+		</ul>
+		<script type="text/javascript">
+			let oTxt = document.getElementById("txt")
+			let oBtn = document.getElementById("btn")
+			let oResult = document.getElementById("result")
+			
+			oBtn.onclick = function() {
+				//待添加的文本
+				let value = txt.value
+				
+				//待添加的li
+				let oLi = document.createElement("li")
+				
+				//待添加的文本
+				let oTxt = document.createTextNode(value)
+				
+				oLi.appendChild(oTxt)
+				oResult.appendChild(oLi)
+			}
+		</script>
+	</body>
+</html>

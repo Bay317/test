@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>123</li>
+			<li>456</li>
+			<li>789</li>
+		</ul>
+		<script type="text/javascript">
+			//ParentNode.children  Document,Element,DocumentFragment(文档碎片)
+			let oUl = document.getElementsByTagName("ul")[0]
+			let childnode = oUl.children  //拿到所有的子元素
+			console.log(childnode)
+		</script>
+	</body>
+</html>

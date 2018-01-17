@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.timeImg {
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/0.png" class="timeImg" />
+		<img src="img/0.png" class="timeImg" />
+		<img src="img/second.png" />
+		<img src="img/0.png" class="timeImg" />
+		<img src="img/0.png" class="timeImg" />
+		<img src="img/second.png" />
+		<img src="img/0.png" class="timeImg" />
+		<img src="img/0.png" class="timeImg" />
+		
+		<script type="text/javascript">
+			//需要找到所有待变化的6张图片的元素
+			let aImg = document.getElementsByClassName("timeImg")
+			let timer2 = null
+			//前1秒的时间状态的字符串
+			let oldTimeStr = ""
+			//初始化方法,在页面初始化之后马上要显示当前时间
+			runtime()
+			console.time("定时器1跑到这里的时间点")
+			//这个定时器从来没有被取消掉
+			let timer = setInterval(runtime, 1000)
+			
+			/**
+			 * 将时间从数字类型转换成字符串类型,并且同时补0
+			 * @param {Number} time 时/分/秒
+			 * @return {String} 转换成字符串,且如果入参小于10则还在前补0
+			 */
+			function changeTime(time) {
+				if(time < 10){
+					return "0" + time
+				} else {
+					return "" + time
+				}
+			}
+			
+			//时间每隔一秒需要初始化
+			function runtime(){
+				//初始化了一个当前时间的date对象
+				let oDate = new Date();  //095524
+				//拿到时分秒的number类型
+				let hour = oDate.getHours()		//9
+				let minute = oDate.getMinutes()		//55
+				let second = oDate.getSeconds()		//22
+				//转换成我需要的字符串类型0-60 -> "00"->"60"
+				let strHour = changeTime(hour)   //9 -> "09"
+				let strMinutes = changeTime(minute)   //55 -> "55"
+				let strSeconds = changeTime(second)   //22 -> '22'
+				//"09", "55", "22"
+				let strTime = strHour + strMinutes + strSeconds   //"095524"
+				//第一次访问的时候 由于oldTimeStr 是空字符串,所以进入并赋值 "095523"
+				//后面的若干次都不会进入该代码块,因为095523为真 !095523为假
+				if(!oldTimeStr){
+					oldTimeStr = strTime
+				}
+				//每秒显示或修改图片 095524
+				clock(strTime)
+				//比较前后2秒之间有哪些差别
+				//"095523", "095524"
+				compare(oldTimeStr, strTime)
+				oldTimeStr = strTime;  //"095522"
+			}
+			
+			
+			/**
+			 * 实际用来渲染图片的方法
+			 * @param {String} str 是一个时分秒的字符串 eg."141650"
+			 */
+			function clock(str){
+				for(let i = 0; i < str.length; i++){
+					aImg[i].src = "img/" + str.charAt(i) + ".png"
+				}
+			}
+			//比较旧时间和新时间的差异
+			/**
+			 *  
+			 * @param {String} oldTime 旧时间的字符串 eg.141919
+			 * @param {String} newTime 新时间的字符串 eg 141920
+			 */
+			function compare(oldTime, newTime){
+				//该数组用来装前后时间有变化的值的对应的下标 eg[4, 5]
+				let arr = []
+				for(let i = 0; i < oldTime.length; i++) {
+					if(oldTime.charAt(i) !== newTime.charAt(i)) {
+						arr.push(i)
+					}
+				}
+				//因为至少秒的后一位会变化,所以无论如何都会开启第二个震动定时器
+				console.timeEnd("定时器1跑到这里的时间点")
+				console.time("开启定时器2和结束定时器2时间")
+				if(arr.length !== 0){
+					timer2 = setInterval(function(){
+						toShake(arr)
+					}, 60)
+				}
+			}
+			
+			let iNow = 0;
+			function toShake(indexArr) {
+				//每当数字发生变化 -> 图片就发生变化 -> 图片发生变化的话 -> 图片就会跳动
+				//振幅,每次图片抖动的振幅
+				let arr = [5, -3, 3, -1, 1, 0, 0, 0, 0, 0];
+				for(let i = 0; i < indexArr.length; i++){
+					aImg[indexArr[i]].style.top = arr[iNow] + "px"
+				}
+				iNow++
+				//当iNow到达10
+				if(iNow === arr.length){
+					console.timeEnd("开启定时器2和结束定时器2时间")
+					clearInterval(timer2)
+					iNow = 0
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li id="li1">11111</li>
+		</ul>
+		<script type="text/javascript">
+			let oUl = document.getElementById("ul1")
+			let oLi = document.getElementById("li1")
+			
+			//点击页面的方法
+			document.onclick = function() {
+				let oSpan = document.createElement("span")
+				let oText = document.createTextNode("2222")
+				
+				oSpan.appendChild(oText);
+				//X.replaceChild(Y, Z)  在X元素中替换Y元素以代替Z元素
+				oUl.replaceChild(oSpan, oLi)
+			}
+		</script>
+	</body>
+</html>

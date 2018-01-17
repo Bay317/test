@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script type="text/javascript">
+			let timer = null
+			let changeTime = time => (time < 10) ? "0" + time : time
+			
+			timer = setInterval(function() {
+				let oDate = new Date();
+				let year = oDate.getFullYear()
+				let month = oDate.getMonth() + 1
+				let date = oDate.getDate()
+				
+				let hour = oDate.getHours()
+				let minute = oDate.getMinutes()
+				let second = oDate.getSeconds()
+				//星期 0-6 其中0代表的是星期日
+				let weekday = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
+				let day = oDate.getDay();
+				
+				let oDiv = document.getElementById("div1")
+				oDiv.innerHTML = year + "年" + month + "月" + date + "日" + weekday[day] + " " + changeTime(hour) + ":" + changeTime(minute) + ":" + changeTime(second)
+			}, 1000)
+		</script>
+	</body>
+</html>
