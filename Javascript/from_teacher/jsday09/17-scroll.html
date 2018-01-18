@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#toTop {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				background: pink;
+				width: 100px;
+				height: 100px;
+				font-size: 38px;
+			}
+			#body {
+				height: 2000px;
+			}
+			
+			#target {
+				margin: 400px;
+				height: 10px;
+				background: skyblue;
+			}
+		</style>
+	</head>
+	<body id="body">
+		<div id="target"></div>
+		<div id="toTop">回到顶部</div>
+	</body>
+	<script type="text/javascript">
+		let toTopBtn = document.getElementById("toTop")
+		let b = document.getElementById("body")
+		
+		toTopBtn.onclick = function() {
+			//获取滚动body(全页面)滚动距离的方式
+			//document.body||document.documentElement
+			//该属性,既可以被get也可以被set
+			document.documentElement.scrollTop = 400;
+		}
+	</script>
+</html>

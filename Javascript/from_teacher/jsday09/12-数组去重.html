@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let arr = [2, 3, 2, 1]	//input
+			function fn(arr){
+				let result = []    //output
+				for(let i = 0; i < arr.length; i++){
+					//说明result数组内的所有对象都和当前遍历的arr[i]不一样
+					//arr[2] => 2
+					//result = [2, 3]
+					let flag = false;
+					for(let j = 0; j < result.length; j++){
+						if(arr[i] === result[j]) {
+							//如果代码跑到这里就意味着结果数组中间有值和当前遍历的arr[i]一样
+							flag = true
+							break
+						}
+					}
+					if(!flag){
+						result.push(arr[i])
+					}
+				}
+				return result
+			}
+			
+			console.log(fn(arr))
+		</script>
+	</body>
+</html>

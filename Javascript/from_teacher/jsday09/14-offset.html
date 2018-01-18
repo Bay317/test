@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1 {
+				width: 400px;
+				height: 400px;
+				background: pink;
+			}
+			#div2 {
+				width: 200px;
+				height: 200px;
+				background: yellow;
+				position: relative;
+			}
+			#div3 {
+				width: 100px;
+				height: 100px;
+				background: skyblue;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+		</style>
+	</head>
+	<body id="body">
+		<div id="div1">
+			<div id="div2">
+				<div id="div3"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//主要是对象和他的父级定位对象之间的关系
+			let oDiv3 = document.getElementById("div3");
+			//offsetParent是获取当前元素的父级定位元素
+			//1.如果找不到父级定位元素 则为body,说明该元素以上的所有祖先元素都不是定位的,
+			//在这种情况下offsetLeft和offsetTop分别表示的就是元素到达body顶部和body左部的距离
+			//2.如果找得到父级定位元素,就以本对象的左上角为点,计算到父级定位元素的上距离和左距离
+			//3.body的offsetParent是null  offsetLeft&offsetTop是0
+			console.log(body.offsetParent)
+			//offsetLeft是获取当前元素和父级定位元素他们之间的左距离
+			console.log(body.offsetLeft)
+			//offsetTop是获取当前元素和父级定位元素他们之间的上距离
+			console.log(body.offsetTop)
+		</script>
+	</body>
+</html>

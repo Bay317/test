@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			let oUl = document.getElementById("ul1")
+			
+			//oUl.firstChild 获取的是第一个节点(支持低版本浏览器,所以可以做兼容)
+			//oUl.firstElementChild  获取的是第一个元素
+			let oFirst = oUl.firstElementChild
+			oFirst.style.background = "pink"
+			
+			//oUl.lastElementChild  获取的是最后一个元素
+			let oLast = oUl.lastElementChild
+			oLast.style.background = "yellow"
+			
+			//nextElementSibling 获取的是下一个相邻元素
+			let oNext = oFirst.nextElementSibling
+			oNext.style.background = "green"
+			
+			//previousElementSibling 获取的是上一个相邻元素
+			let oPrev = oLast.previousElementSibling
+			oPrev.style.background = "skyblue"
+		</script>
+	</body>
+</html>

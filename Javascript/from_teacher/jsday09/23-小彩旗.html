@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<!-- <li></li> -->
+		</ul>
+		<script type="text/javascript">
+			let oUl = document.getElementById("ul1")
+			let arr = ['pink', 'yellow', 'blue', 'orange']
+			let count = 500
+			function createLi(oParent, colorArr, count){
+				for(let i = 0; i < count; i++) {
+					let oLi = document.createElement("li");
+					oLi.setAttribute('style', 'background: ' + arr[i%colorArr.length] + ';')
+					oLi.onmouseover = function(){
+						oLi.setAttribute('style', 'background: green;')
+					}
+					oLi.onmouseout = function(){
+						oLi.setAttribute('style', 'background: ' + arr[i%colorArr.length] + ';')
+					}
+					oParent.appendChild(oLi)
+				}
+			}
+			createLi(oUl, arr, count)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1 {
+				width: 100px;
+				height: 200px;
+				background: pink;
+				padding: 10px;
+				border: 5px solid black;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script type="text/javascript">
+			let div1 = document.getElementById("div1");
+			//返回的就是盒模型的宽高,很常用
+			console.log(div1.offsetHeight)	//230
+			console.log(div1.offsetWidth)   //130
+			
+			//client表达自身的一些属性
+			console.log(div1.clientHeight)   //padding + height的高度 220
+			console.log(div1.clientWidth)    //padding + width的宽度  120
+			console.log(div1.clientTop)		 //border-top 5px
+			console.log(div1.clientLeft)     //border-left 5px
+			
+			//特别的
+//			clientHeight
+//			clientWidth
+//			clientTop
+//			clientLeft
+//			offsetHeight
+//			offsetWidth
+//			offsetLeft
+//			offsetTop
+			//如果元素被隐藏,则这些参数都为0
+		</script>
+	</body>
+</html>

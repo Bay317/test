@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li id="li1">1</li>
+			<hr />
+			<!-- <li>1</li>-->
+		</ul>
+		
+		<script type="text/javascript">
+			let oUl = document.getElementById("ul1")
+			let oLi = document.getElementById("li1")
+			
+			document.onclick = function() {
+				oUl.appendChild(oLi)
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" style="width: 100px;height: 100px;background: pink;"></div>
+		<script type="text/javascript">
+			let div1 = document.getElementById("div1");
+			//getAttribute 查询方法
+			console.log(div1.getAttribute('id'))
+			console.log(div1.getAttribute('class'))
+			console.log(div1.getAttribute('style'))
+			//setAttribute 增/改方法
+			div1.setAttribute('class', 'class2')
+			div1.setAttribute("hahaha", "heiheihei")
+			//removeAttribute 删除方法
+			div1.removeAttribute("hahaha")
+		</script>
+	</body>
+</html>

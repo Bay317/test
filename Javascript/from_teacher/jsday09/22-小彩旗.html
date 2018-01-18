@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<!-- <li></li> -->
+		</ul>
+		<script type="text/javascript">
+			let oUl = document.getElementById("ul1")
+			for(let i = 0; i < 9; i++) {
+				let oLi = document.createElement("li");
+				
+				if(i % 3 === 0){
+					oLi.setAttribute('style', 'background: pink')
+					//在初始化的时候用一个无关的color属性来记录前生他的啥颜色的
+					oLi.setAttribute('color', 'pink')
+				} else if(i % 3 === 1) {
+					oLi.setAttribute('style', 'background: yellow')
+					oLi.setAttribute('color', 'yellow')
+				} else if(i % 3 === 2) {
+					oLi.setAttribute('style', 'background: blue;')
+					oLi.setAttribute('color', 'blue')
+				}
+				
+				oLi.onmouseover = function(){
+					oLi.setAttribute('style', 'background: green;')
+				}
+				oLi.onmouseout = function(){
+					oLi.setAttribute('style', 'background: ' + oLi.getAttribute('color') + ';')
+				}
+				oUl.appendChild(oLi)
+			}
+		</script>
+	</body>
+</html>

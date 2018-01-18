@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">排序</button>
+		<ul id="ul1">
+			<li>3</li>
+			<li>5</li>
+			<li>2</li>
+			<li>1</li>
+			<li>4</li>
+		</ul>
+		
+		<script type="text/javascript">
+			let oBtn = document.getElementById("btn");
+			let oUl = document.getElementById("ul1")
+			let aLi = oUl.children
+			
+			oBtn.onclick = function (){
+				//[1, 2, 3, 4, 5]
+				let arr = []
+				for(let i = 0; i < aLi.length; i++){
+					arr.push(aLi[i])
+				}
+				arr.sort(function(li1, li2){
+					return li1.innerText - li2.innerText
+				})
+				console.log(arr)
+			}
+		</script>
+	</body>
+</html>

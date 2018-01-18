@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let id = 58
+			let id2 = 59
+			let id3 = 60
+			
+			let score = {
+				name : "小张",
+				"语文" : 80,
+				"数学" : 90,
+				"英语" : 100,
+				"总分" : 270
+			}
+			
+			let score2 = {
+				name : "小李",
+				"语文" : 60,
+				"数学" : 90,
+				"英语" : 70,
+				"总分" : 220
+			}
+			
+			let score3 = {
+				name : "小王",
+				"语文" : 70,
+				"数学" : 100,
+				"英语" : 70,
+				"总分" : 240
+			}
+			
+			let scoreMap = new Map()
+			scoreMap.set(id, score);
+			scoreMap.set(id2, score2);
+			scoreMap.set(id3, score3);
+			console.log(scoreMap)
+			console.log(scoreMap.get(59)["数学"])
+			console.log(scoreMap.get(59).name + "的数学成绩是" + scoreMap.get(59)["数学"] + "分")
+			//Map中的key可以用任何数据形式 包括基本和合成数据类型
+			//Json的key 很多时候都会被强制转换成字符串
+		</script>
+	</body>
+</html>

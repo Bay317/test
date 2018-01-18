@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">反选</div>
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		
+		<script type="text/javascript">
+			let oDiv = document.getElementById("div1")
+			let aInput = document.getElementsByTagName("input")
+			
+			oDiv.onclick = function() {
+				for(let input of aInput){
+					input.checked = !input.checked
+				}
+			}
+		</script>
+	</body>
+</html>

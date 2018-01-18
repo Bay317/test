@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+
+<body>
+	<div id="div1"></div>
+	<script type="text/javascript">	
+		let timer = null;
+		let changeTime = time => (time < 10) ? '0' + time : time;
+
+		timer = setInterval (function(){
+		let aDate = new Date();
+		let year = aDate.getFullYear();
+		let month = aDate.getMonth()+1;
+		let date = aDate.getDate();
+		let hour = aDate.getHours();
+		let min = aDate.getMinutes();
+		let sec = aDate.getSeconds();
+		let weekday = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+		let day = aDate.getDay();
+
+		let aDiv = document.getElementById('div1');
+
+		aDiv.innerHTML = year + '年'+ month + '月' + date + '日' + weekday[day] + ' ' + changeTime(hour) + '时' + changeTime(min) + '分' + changeTime(sec) + '秒'
+	},1000)
+
+		
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			let oUl = document.getElementById("ul1");
+			let aLi = oUl.children
+			
+			for(let elem of aLi){
+				elem.onmouseover = function() {
+					this.style.backgroundColor = "pink"
+					let oNext = this.nextElementSibling
+					let oPrev = this.previousElementSibling
+					if(oNext) {
+						oNext.style.background = "skyblue"
+					}
+					if(oPrev){
+						oPrev.style.background = "skyblue"
+					}
+				}
+				
+				elem.onmouseout = function() {
+					this.style.backgroundColor = ""
+					let oNext = this.nextElementSibling
+					let oPrev = this.previousElementSibling
+					if(oNext) {
+						oNext.style.background = ""
+					}
+					if(oPrev) {
+						oPrev.style.background = ""
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

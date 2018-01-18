@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#ul1 .hover {
+				background-color: pink;
+			}
+			#ul1 .hover-sibling {
+				background-color: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			let oUl = document.getElementById("ul1");
+			let aLi = oUl.children
+			
+			for(let elem of aLi){
+				elem.onmouseover = function() {
+					moveMouse(elem)
+				}
+				
+				elem.onmouseout = function() {
+					moveMouse(elem)
+				}
+			}
+			
+			/**
+			 * 鼠标进入或离开发生的事情
+			 * @param {Object} elem
+			 */
+			function moveMouse(elem) {
+				//找到下一个兄弟节点
+				let next = elem.nextElementSibling;
+				changeSibling(next, "next")
+				//找到上一个兄弟节点
+				let prev = elem.previousElementSibling
+				changeSibling(prev, "prev")
+				//把当前的节点粉色或取消
+				changeColor(elem, "hover")
+			}
+			
+			function changeSibling(elem, type) {
+				if(elem){
+					changeColor(elem, "hover-sibling")
+				}
+			}
+			/**
+			 * 改变相应的颜色
+			 * @param {Object} elem
+			 * @param {Object} name
+			 */
+			function changeColor(elem, name) {
+				elem.className = (elem.className) ? "" : name
+			}
+		</script>
+	</body>
+</html>
